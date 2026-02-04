@@ -31,6 +31,7 @@
   --color-white: #FFFFFF;
   --color-off-white: #F8F9FA;
   --color-light-gray: #E8EEF5;
+  --color-light-blue-bg: #F0F7FF;
   --color-medium-gray: #C5D3E0;
 
   /* Dark Shades */
@@ -90,10 +91,11 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-text-dark);
-  background: linear-gradient(135deg, #F5F7FA 0%, #E8EEF5 50%, #D4E0F0 100%);
+  background: var(--color-white);
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* === TYPOGRAPHY === */

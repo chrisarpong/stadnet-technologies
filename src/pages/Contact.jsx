@@ -1,13 +1,22 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import './Contact.css';
 
 const Contact = () => {
+    const formRef = useRef();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
         subject: '',
+        message: ''
+    });
+    const [formStatus, setFormStatus] = useState({
+        loading: false,
+        success: false,
+        error: false,
         message: ''
     });
 
@@ -18,16 +27,57 @@ const Contact = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Form submission logic would go here
-        console.log('Form submitted:', formData);
-        alert('Thank you for contacting us! We will get back to you soon.');
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        setFormStatus({ loading: true, success: false, error: false, message: '' });
+
+        try {
+            // EmailJS configuration - Replace these with your actual values
+            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+
+            await emailjs.sendForm(
+                serviceId,
+                templateId,
+                formRef.current,
+                publicKey
+            );
+
+            setFormStatus({
+                loading: false,
+                success: true,
+                error: false,
+                message: 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.'
+            });
+
+            // Reset form
+            setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+
+            // Clear success message after 5 seconds
+            setTimeout(() => {
+                setFormStatus({ loading: false, success: false, error: false, message: '' });
+            }, 5000);
+
+        } catch (error) {
+            console.error('EmailJS Error:', error);
+            setFormStatus({
+                loading: false,
+                success: false,
+                error: true,
+                message: 'Oops! Something went wrong. Please try again or email us directly at info@stadnet.com'
+            });
+        }
     };
 
     return (
         <div className="contact-page">
+            <SEO
+                title="Contact Us"
+                description="Get in touch with Stadnet Technologies. We're here to help with your IT and digital transformation needs."
+                keywords="contact Stadnet, IT support Ghana, web development inquiry, cloud computing consultation"
+            />
+
             <Hero
                 title="Get In Touch"
                 subtitle="Let's discuss how we can help transform your business"
@@ -37,7 +87,7 @@ const Contact = () => {
             <section className="section">
                 <div className="container">
                     <div className="contact-grid">
-                        <div className="contact-info">
+                        <div className="contact-info" data-aos="fade-right">
                             <h3 className="mb-md">Contact Information</h3>
                             <div className="info-items">
                                 <div className="info-item">
@@ -95,9 +145,23 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="contact-form-container glass-card">
+                        <div className="contact-form-container glass-card" data-aos="fade-left">
                             <h3 className="mb-md">Send Us a Message</h3>
-                            <form onSubmit={handleSubmit} className="contact-form">
+
+                            {/* Status Messages */}
+                            {formStatus.success && (
+                                <div className="alert alert-success">
+                                    ✓ {formStatus.message}
+                                </div>
+                            )}
+                            {formStatus.error && (
+                                <div className="alert alert-error">
+                                    ✗ {formStatus.message}
+                                </div>
+                            )}
+
+
+                            <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
                                 <div className="form-group">
                                     <label htmlFor="name">Full Name *</label>
                                     <input
@@ -162,8 +226,12 @@ const Contact = () => {
                                     ></textarea>
                                 </div>
 
-                                <button type="submit" className="btn btn-primary btn-large w-100">
-                                    Send Message
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary btn-large w-100"
+                                    disabled={formStatus.loading}
+                                >
+                                    {formStatus.loading ? 'Sending...' : 'Send Message'}
                                 </button>
                             </form>
                         </div>

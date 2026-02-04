@@ -1,0 +1,40 @@
+/* === DARK MODE VARIABLES === */
+[data-theme="dark"] {
+    /* Dark Mode Colors */
+    --color-white: #1A1A2E;
+    --color-off-white: #16213E;
+    --color-light-gray: #2C3E50;
+    --color-light-blue-bg: #1E2A3A;
+    --color-text-dark: #E8EEF5;
+
+    /* Dark Mode Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-bg-light: rgba(255, 255, 255, 0.08);
+    --glass-bg-medium: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border-strong: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    --glass-shadow-hover: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+    --glass-shadow-strong: 0 15px 50px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* === SECTION STYLES (Marketing Website Feel) === */
+.section-alt {
+    background: var(--color-light-blue-bg);
+}
+
+.section-white {
+    background: var(--color-white);
+}
+
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-primary-light) 50%, transparent 100%);
+    margin: var(--spacing-2xl) 0;
+}
+
+/* Reduce glassmorphism on sections for more solid website feel */
+.section {
+    position: relative;
+}

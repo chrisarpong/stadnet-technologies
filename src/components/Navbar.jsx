@@ -44,6 +44,7 @@ const Navbar = () => {
                 <div className="navbar-content">
                     <Link to="/" className="navbar-logo">
                         <img src="/logo.png" alt="Stadnet Technologies" className="logo-image" />
+                        <span className="logo-text-brand">Stadnet</span>
                     </Link>
 
                     <button

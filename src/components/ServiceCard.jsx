@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Tilt from 'react-parallax-tilt';
 import './ServiceCard.css';
 
 const ServiceCard = ({
@@ -10,30 +11,39 @@ const ServiceCard = ({
     delay = 0
 }) => {
     return (
-        <div
-            className="service-card glass-card"
-            style={{ animationDelay: `${delay}ms` }}
+        <Tilt
+            tiltMaxAngleX={10}
+            tiltMaxAngleY={10}
+            perspective={1000}
+            scale={1.02}
+            transitionSpeed={400}
+            gyroscope={false}
         >
-            {icon && (
-                <div className="service-icon">
-                    {typeof icon === 'string' ? (
-                        <img src={icon} alt={title} />
-                    ) : (
-                        icon
-                    )}
-                </div>
-            )}
-            <h3 className="service-title">{title}</h3>
-            <p className="service-description">{description}</p>
-            {linkUrl && (
-                <a href={linkUrl} className="service-link">
-                    {linkText}
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </a>
-            )}
-        </div>
+            <div
+                className="service-card glass-card"
+                style={{ animationDelay: `${delay}ms` }}
+            >
+                {icon && (
+                    <div className="service-icon">
+                        {typeof icon === 'string' ? (
+                            <img src={icon} alt={title} />
+                        ) : (
+                            icon
+                        )}
+                    </div>
+                )}
+                <h3 className="service-title">{title}</h3>
+                <p className="service-description">{description}</p>
+                {linkUrl && (
+                    <a href={linkUrl} className="service-link">
+                        {linkText}
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </a>
+                )}
+            </div>
+        </Tilt>
     );
 };
 

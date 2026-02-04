@@ -1,5 +1,8 @@
+import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
+import Testimonials from '../components/Testimonials';
+import FAQ from '../components/FAQ';
 import './Home.css';
 
 const Home = () => {
@@ -80,6 +83,12 @@ const Home = () => {
 
     return (
         <div className="home-page">
+            <SEO
+                title="Home"
+                description="Stadnet Technologies - Leading provider of mobile & web development, cloud computing, graphic design, product design, consulting, and engineering services in Ghana."
+                keywords="IT solutions, web development, mobile apps, cloud computing, graphic design, product design, consulting, engineering, Ghana, Accra"
+            />
+
             {/* Floating Shapes */}
             <div className="floating-shape floating-shape-1"></div>
             <div className="floating-shape floating-shape-2"></div>
@@ -93,9 +102,9 @@ const Home = () => {
                 height="large"
             />
 
-            <section className="section services-section">
+            <section className="section services-section section-white">
                 <div className="container">
-                    <div className="section-header text-center">
+                    <div className="section-header text-center" data-aos="fade-up">
                         <h2 className="text-gradient">Our Solutions</h2>
                         <p className="section-subtitle">
                             Comprehensive IT services designed to accelerate your digital transformation
@@ -116,9 +125,15 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="section section-alt cta-section">
+            {/* Testimonials Section */}
+            <Testimonials />
+
+            {/* FAQ Section */}
+            <FAQ />
+
+            <section className="section section-white cta-section">
                 <div className="container-narrow">
-                    <div className="cta-content glass-card text-center">
+                    <div className="cta-content glass-card text-center" data-aos="zoom-in">
                         <h2>Ready to Transform Your Business?</h2>
                         <p>
                             Let's discuss how Stadnet Technologies can help you achieve your digital goals

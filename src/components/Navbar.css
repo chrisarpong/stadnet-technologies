@@ -52,6 +52,19 @@
     height: 40px;
 }
 
+.logo-text-brand {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.25rem;
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    transition: color var(--transition-fast);
+}
+
+.navbar-logo:hover .logo-text-brand {
+    color: var(--color-teal);
+}
+
 .logo-text {
     color: var(--color-primary);
     transition: color var(--transition-fast);

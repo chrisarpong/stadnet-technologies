@@ -20,6 +20,7 @@
     "react-ga4": "^2.1.0",
     "react-helmet-async": "^2.0.5",
     "react-parallax": "^3.5.2",
+    "react-parallax-tilt": "^1.7.319",
     "react-router-dom": "^6.20.0",
     "react-tilt": "^1.0.2"
   },
