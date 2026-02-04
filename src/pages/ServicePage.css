@@ -1,0 +1,42 @@
+.service-page {
+    min-height: 100vh;
+}
+
+.service-intro {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.service-intro h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.service-intro p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-dark);
+}
+
+.feature-card {
+    padding: var(--spacing-lg);
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.feature-card h4 {
+    color: var(--color-primary);
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.feature-card p {
+    color: var(--color-text-dark);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .feature-card {
+        padding: var(--spacing-md);
+    }
+}
