@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -86,6 +87,7 @@ const Navbar = () => {
 
                         <Link to="/careers" className="nav-link">Careers</Link>
                         <Link to="/contact" className="nav-link nav-link-primary">Contact Us</Link>
+                        <ThemeToggle />
                     </div>
                 </div>
             </div>

@@ -7,7 +7,6 @@ import PageTransition from './components/PageTransition';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import StickyCTA from './components/StickyCTA';
-import DarkModeToggle from './components/DarkModeToggle';
 import CookieBanner from './components/CookieBanner';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import ScrollToTop from './components/ScrollToTop';
@@ -63,7 +62,6 @@ function App() {
                             </main>
                             <Footer />
                             <StickyCTA />
-                            <DarkModeToggle />
                             <CookieBanner />
                             <ScrollToTop />
                         </div>
