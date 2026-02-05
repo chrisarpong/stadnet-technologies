@@ -196,3 +196,43 @@
         text-align: center;
     }
 }
+
+/* Dark Mode Overrides for Footer */
+[data-theme="dark"] .footer {
+    background: linear-gradient(180deg, #0d1117 0%, #010409 100%);
+}
+
+[data-theme="dark"] .footer-title {
+    color: #F5F7FA;
+}
+
+[data-theme="dark"] .contact-item,
+[data-theme="dark"] .contact-item a,
+[data-theme="dark"] .footer-nav a,
+[data-theme="dark"] .footer-about {
+    color: #C9D1D9;
+}
+
+[data-theme="dark"] .contact-item a:hover,
+[data-theme="dark"] .footer-nav a:hover {
+    color: #58A6FF;
+}
+
+[data-theme="dark"] .footer-bottom,
+[data-theme="dark"] .footer-legal a {
+    color: #8B949E;
+}
+
+[data-theme="dark"] .footer-legal a:hover {
+    color: #58A6FF;
+}
+
+[data-theme="dark"] .footer-social a {
+    background: rgba(255, 255, 255, 0.05);
+    color: #C9D1D9;
+}
+
+[data-theme="dark"] .footer-social a:hover {
+    background: var(--color-primary);
+    color: #FFFFFF;
+}
