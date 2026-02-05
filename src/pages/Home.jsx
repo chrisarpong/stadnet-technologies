@@ -2,7 +2,6 @@ import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import Testimonials from '../components/Testimonials';
-import FAQ from '../components/FAQ';
 import './Home.css';
 
 const Home = () => {
@@ -127,9 +126,6 @@ const Home = () => {
 
             {/* Testimonials Section */}
             <Testimonials />
-
-            {/* FAQ Section */}
-            <FAQ />
 
             <section className="section section-white cta-section">
                 <div className="container-narrow">
