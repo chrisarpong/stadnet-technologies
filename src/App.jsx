@@ -9,6 +9,8 @@ import Footer from './components/Footer';
 import StickyCTA from './components/StickyCTA';
 import DarkModeToggle from './components/DarkModeToggle';
 import CookieBanner from './components/CookieBanner';
+import GoogleAnalytics from './components/GoogleAnalytics';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Solutions from './pages/Solutions';
 import MobileWebDev from './pages/MobileWebDev';
@@ -44,11 +46,16 @@ const AnimatedRoutes = () => {
 };
 
 function App() {
+    // Replace with your actual Google Analytics Measurement ID
+    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // User needs to replace this
+
     return (
         <HelmetProvider>
             <ThemeProvider>
                 <ErrorBoundary>
                     <Router>
+                        <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
+
                         <div className="app">
                             <Navbar />
                             <main>
@@ -58,6 +65,7 @@ function App() {
                             <StickyCTA />
                             <DarkModeToggle />
                             <CookieBanner />
+                            <ScrollToTop />
                         </div>
                     </Router>
                 </ErrorBoundary>

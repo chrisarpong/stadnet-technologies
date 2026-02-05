@@ -88,11 +88,9 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
   color: var(--color-text-dark);
   background: var(--color-white);
-  min-height: 100vh;
+  line-height: 1.6;
   overflow-x: hidden;
   position: relative;
   transition: background-color 0.3s ease, color 0.3s ease;
