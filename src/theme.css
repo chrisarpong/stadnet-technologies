@@ -5,7 +5,12 @@
     --color-off-white: #16213E;
     --color-light-gray: #2C3E50;
     --color-light-blue-bg: #1E2A3A;
-    --color-text-dark: #E8EEF5;
+    --color-text-dark: #F5F7FA;
+    /* Brighter text for better visibility */
+    --color-primary-dark: #66B2FF;
+    /* Lighter primary for dark mode */
+    --color-medium-gray: #8B9DC3;
+    /* Better contrast for secondary text */
 
     /* Dark Mode Glassmorphism */
     --glass-bg: rgba(255, 255, 255, 0.05);
