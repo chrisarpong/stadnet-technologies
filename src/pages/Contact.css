@@ -102,14 +102,15 @@
 }
 
 .form-group input,
-.form-group textarea {
-    padding: 0.875rem 1rem;
-    border: 2px solid rgba(0, 102, 204, 0.2);
+.form-group textarea,
+.form-group select {
+    padding: 0.875rem;
+    border: 2px solid var(--color-light-gray);
     border-radius: var(--radius-md);
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--color-text-dark);
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--color-white);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     transition: all var(--transition-fast);
