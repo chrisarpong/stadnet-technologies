@@ -29,8 +29,22 @@ const MobileWebDev = () => {
         }
     ];
 
+    const breadcrumbItems = [
+        { label: 'Home', path: '/' },
+        { label: 'Solutions', path: '/solutions' },
+        { label: 'Mobile & Web Development', path: '/mobile-web-development' }
+    ];
+
     return (
         <div className="service-page">
+            <SEO
+                title="Mobile & Web Development Services | Stadnet Technologies"
+                description="Professional mobile and web development services in Ghana. Build cutting-edge applications with React, Node.js, and modern technologies."
+                keywords="mobile development, web development, React, Node.js, Ghana"
+            />
+
+            <Breadcrumb items={breadcrumbItems} />
+
             <Hero
                 title="Mobile & Web Development"
                 subtitle="Build powerful applications that engage users and drive business growth"

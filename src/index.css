@@ -3,6 +3,8 @@
    Blue & White Glassmorphism Theme
    ============================================ */
 
+@import './animations.css';
+
 /* === CSS RESET === */
 *,
 *::before,
