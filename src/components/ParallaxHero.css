@@ -264,17 +264,23 @@
         height: auto;
         min-height: auto;
         padding: var(--spacing-2xl) 0;
-        padding-top: 160px;
-        /* Extra padding for mobile navbar */
+        padding-top: 180px !important;
+        /* Ensure main container has padding */
+        display: block;
+        /* Remove flex centering constraint on mobile */
     }
 
     .hero-split-layout {
         gap: var(--spacing-sm);
+        margin-top: 2rem;
+        /* Add specific margin to content */
     }
 
     .hero-title {
         font-size: clamp(1.75rem, 8vw, 2.25rem);
         color: #ffffff !important;
+        margin-top: 1rem;
+        /* Ensure title is pushed down */
     }
 
     .hero-subtitle {
