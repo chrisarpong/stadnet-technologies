@@ -44,29 +44,34 @@ const ParallaxHero = ({ title, subtitle, ctaText, ctaLink }) => {
                 <div className="shape shape-hexagon" ref={el => shapesRef.current[3] = el}></div>
             </div>
 
-            <div className="hero-content">
-                <h1 className="hero-title animate-fade-in">
-                    {title}
-                </h1>
-                <p className="hero-subtitle animate-fade-in animate-delay-200">
-                    {subtitle}
-                </p>
-                {ctaText && ctaLink && (
-                    <a href={ctaLink} className="hero-cta animate-fade-in animate-delay-400">
-                        {ctaText}
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </a>
-                )}
-            </div>
+            <div className="container">
+                <div className="hero-split-layout">
+                    {/* Left side - Text content */}
+                    <div className="hero-text-content">
+                        <h1 className="hero-title animate-fade-in">
+                            {title}
+                        </h1>
+                        <p className="hero-subtitle animate-fade-in animate-delay-200">
+                            {subtitle}
+                        </p>
+                        {ctaText && ctaLink && (
+                            <a href={ctaLink} className="hero-cta animate-fade-in animate-delay-400">
+                                {ctaText}
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </a>
+                        )}
+                    </div>
 
-            {/* Scroll indicator */}
-            <div className="scroll-indicator animate-pulse">
-                <div className="mouse">
-                    <div className="wheel"></div>
+                    {/* Right side - Image box */}
+                    <div className="hero-image-box">
+                        {/* Placeholder for image - user will add image later */}
+                        <div className="image-placeholder">
+                            <span>Image will go here</span>
+                        </div>
+                    </div>
                 </div>
-                <p>Scroll to explore</p>
             </div>
         </div>
     );
