@@ -263,7 +263,9 @@
     .parallax-hero {
         height: auto;
         min-height: auto;
-        padding: var(--spacing-xl) 0;
+        padding: var(--spacing-2xl) 0;
+        padding-top: 120px;
+        /* Extra padding for mobile navbar */
     }
 
     .hero-split-layout {
