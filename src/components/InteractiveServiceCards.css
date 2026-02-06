@@ -216,8 +216,8 @@
 @media (max-width: 768px) {
     .service-item {
         flex-direction: column;
-        gap: var(--spacing-md);
-        padding: var(--spacing-lg) 0;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md) 0;
     }
 
     .service-item:hover {
@@ -225,12 +225,13 @@
     }
 
     .service-number {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        align-self: flex-start;
     }
 
     .service-header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
         gap: var(--spacing-sm);
     }
 
@@ -239,14 +240,46 @@
     }
 
     .service-title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        color: var(--color-primary) !important;
+    }
+
+    /* Mobile tap effect - change to white */
+    .service-item:active .service-title {
+        color: #ffffff !important;
     }
 
     .service-description {
         font-size: 0.9375rem;
+        line-height: 1.5;
+        color: var(--color-text-dark);
     }
 
     .service-link {
         font-size: 0.9375rem;
+        margin-top: var(--spacing-xs);
+    }
+
+    .service-line {
+        width: 50%;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .service-number {
+        font-size: 1.75rem;
+    }
+
+    .service-icon-wrapper {
+        font-size: 1.75rem;
+    }
+
+    .service-title {
+        font-size: 1.125rem;
+    }
+
+    .service-description {
+        font-size: 0.875rem;
     }
 }
