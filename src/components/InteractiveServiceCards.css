@@ -115,13 +115,14 @@
 .service-title {
     font-size: 1.75rem;
     font-weight: 700;
-    color: var(--color-primary-dark);
+    color: var(--color-text-dark);
     margin: 0;
-    transition: color var(--transition-fast);
+    transition: all var(--transition-fast);
 }
 
 .service-item:hover .service-title {
     color: var(--color-primary);
+    transform: translateX(5px);
 }
 
 .service-description {
@@ -160,7 +161,7 @@
 
 .service-link:hover {
     gap: 0.75rem;
-    color: var(--color-primary-dark);
+    color: var(--color-primary-light);
 }
 
 .service-link svg {
@@ -196,11 +197,11 @@
 }
 
 [data-theme="dark"] .service-title {
-    color: var(--color-primary-light);
+    color: var(--color-text-light);
 }
 
 [data-theme="dark"] .service-item:hover .service-title {
-    color: var(--color-white);
+    color: var(--color-primary-light);
 }
 
 [data-theme="dark"] .service-description {
