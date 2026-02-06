@@ -2,6 +2,12 @@
     padding: var(--spacing-3xl) 0;
 }
 
+@media (max-width: 768px) {
+    .interactive-services {
+        padding: var(--spacing-2xl) 0;
+    }
+}
+
 .section-title {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
@@ -21,6 +27,15 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .section-subtitle {
+        font-size: 1.0625rem;
+        margin-bottom: var(--spacing-lg);
+        padding: 0 var(--spacing-md);
+    }
 }
 
 .services-grid {
@@ -148,11 +163,11 @@
 @media (max-width: 768px) {
     .services-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: var(--spacing-md);
     }
 
     .service-card-3d {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
     }
 
     /* Disable 3D effect on mobile */
@@ -161,6 +176,15 @@
     }
 
     .service-icon {
-        font-size: 3rem;
+        font-size: 2.75rem;
+    }
+
+    .service-title {
+        font-size: 1.25rem;
+    }
+
+    .service-description {
+        font-size: 0.9375rem;
+        line-height: 1.5;
     }
 }

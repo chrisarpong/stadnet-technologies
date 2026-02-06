@@ -237,7 +237,7 @@
 @media (max-width: 968px) {
     .hero-split-layout {
         grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
+        gap: var(--spacing-lg);
         min-height: auto;
     }
 
@@ -247,7 +247,12 @@
     }
 
     .hero-image-box {
-        min-height: 300px;
+        min-height: 250px;
+    }
+
+    .hero-cta {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
     }
 }
 
@@ -255,7 +260,30 @@
     .parallax-hero {
         height: auto;
         min-height: auto;
-        padding: var(--spacing-3xl) 0;
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .hero-split-layout {
+        gap: var(--spacing-md);
+    }
+
+    .hero-title {
+        font-size: clamp(1.875rem, 8vw, 2.5rem);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 4vw, 1.125rem);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero-cta {
+        padding: 0.75rem 1.75rem;
+        font-size: 0.9375rem;
+    }
+
+    .hero-image-box {
+        min-height: 200px;
+        padding: var(--spacing-md);
     }
 
     .gradient-orb {
