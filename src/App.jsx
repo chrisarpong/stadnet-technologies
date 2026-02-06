@@ -6,7 +6,6 @@ import ErrorBoundary from './components/ErrorBoundary';
 import PageTransition from './components/PageTransition';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import StickyCTA from './components/StickyCTA';
 import CookieBanner from './components/CookieBanner';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import ScrollToTop from './components/ScrollToTop';
@@ -61,14 +60,13 @@ function App() {
                                 <AnimatedRoutes />
                             </main>
                             <Footer />
-                            <StickyCTA />
                             <CookieBanner />
                             <ScrollToTop />
                         </div>
                     </Router>
                 </ErrorBoundary>
             </ThemeProvider>
-        </HelmetProvider>
+        </HelmetProvider >
     );
 }
 
