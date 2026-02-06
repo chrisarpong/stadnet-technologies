@@ -59,6 +59,7 @@ const Navbar = () => {
 
                     <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
                         <Link to="/" className="nav-link">Home</Link>
+                        <Link to="/about" className="nav-link">About</Link>
                         <Link to="/solutions" className="nav-link">Solutions</Link>
 
                         <div className={`nav-dropdown ${activeDropdown === 'services' ? 'active' : ''}`}>

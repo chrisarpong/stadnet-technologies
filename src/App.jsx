@@ -19,6 +19,7 @@ import ProductDesign from './pages/ProductDesign';
 import Consulting from './pages/Consulting';
 import Engineering from './pages/Engineering';
 import Careers from './pages/Careers';
+import About from './pages/About';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
@@ -29,6 +30,7 @@ const AnimatedRoutes = () => {
         <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+                <Route path="/about" element={<PageTransition><About /></PageTransition>} />
                 <Route path="/solutions" element={<PageTransition><Solutions /></PageTransition>} />
                 <Route path="/mobile-web-development" element={<PageTransition><MobileWebDev /></PageTransition>} />
                 <Route path="/cloud-computing" element={<PageTransition><CloudComputing /></PageTransition>} />
