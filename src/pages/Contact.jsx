@@ -32,9 +32,9 @@ const Contact = () => {
         setFormStatus({ loading: true, success: false, error: false, message: '' });
 
         try {
-            // EmailJS configuration - Replace these with your actual values
-            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
-            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+            // EmailJS configuration with your credentials
+            const serviceId = 'service_fv1sml6';
+            const templateId = 'template_akvlspq';
             const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
 
             await emailjs.sendForm(
@@ -167,7 +167,7 @@ const Contact = () => {
                                     <input
                                         type="text"
                                         id="name"
-                                        name="name"
+                                        name="user_name"
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
@@ -180,7 +180,7 @@ const Contact = () => {
                                     <input
                                         type="email"
                                         id="email"
-                                        name="email"
+                                        name="user_email"
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
@@ -193,7 +193,7 @@ const Contact = () => {
                                     <input
                                         type="tel"
                                         id="phone"
-                                        name="phone"
+                                        name="contact_number"
                                         value={formData.phone}
                                         onChange={handleChange}
                                         placeholder="+233 50 123 4567"
