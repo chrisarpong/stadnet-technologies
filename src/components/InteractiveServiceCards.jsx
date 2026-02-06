@@ -1,28 +1,34 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './InteractiveServiceCards.css';
 
 const InteractiveServiceCards = ({ services }) => {
-    const [hoveredCard, setHoveredCard] = useState(null);
+    const servicesRef = useRef([]);
 
-    const handleMouseMove = (e, index) => {
-        const card = e.currentTarget;
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('slide-in');
+                        }, index * 150);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
 
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+        servicesRef.current.forEach((ref) => {
+            if (ref) observer.observe(ref);
+        });
 
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-    };
-
-    const handleMouseLeave = (e) => {
-        e.currentTarget.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-    };
+        return () => {
+            servicesRef.current.forEach((ref) => {
+                if (ref) observer.unobserve(ref);
+            });
+        };
+    }, []);
 
     return (
         <section className="interactive-services">
@@ -32,35 +38,32 @@ const InteractiveServiceCards = ({ services }) => {
                     Comprehensive technology services tailored to your business needs
                 </p>
 
-                <div className="services-grid">
+                <div className="services-list">
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="service-card-3d"
-                            onMouseMove={(e) => handleMouseMove(e, index)}
-                            onMouseEnter={() => setHoveredCard(index)}
-                            onMouseLeave={(e) => {
-                                handleMouseLeave(e);
-                                setHoveredCard(null);
-                            }}
+                            className="service-item"
+                            ref={el => servicesRef.current[index] = el}
                         >
-                            <div className="card-glow"></div>
-                            <div className="card-content">
-                                <div className="service-icon">
-                                    {service.icon}
+                            <div className="service-number">
+                                {String(index + 1).padStart(2, '0')}
+                            </div>
+                            <div className="service-content">
+                                <div className="service-header">
+                                    <div className="service-icon-wrapper">
+                                        {service.icon}
+                                    </div>
+                                    <h3 className="service-title">{service.title}</h3>
                                 </div>
-                                <h3 className="service-title">{service.title}</h3>
                                 <p className="service-description">{service.description}</p>
-                                <Link
-                                    to={service.link}
-                                    className="service-link"
-                                >
-                                    Learn more
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <Link to={service.link} className="service-link">
+                                    Explore {service.title}
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </Link>
                             </div>
+                            <div className="service-line"></div>
                         </div>
                     ))}
                 </div>
