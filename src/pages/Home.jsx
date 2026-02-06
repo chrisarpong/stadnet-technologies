@@ -86,8 +86,6 @@ const Home = () => {
             <ParallaxHero
                 title="Your Partner in Digital Innovation"
                 subtitle="We provide cutting-edge technology solutions that drive growth and transform businesses across Africa"
-                ctaText="Get Started"
-                ctaLink="/contact"
             />
 
             {/* Interactive Service Cards */}
