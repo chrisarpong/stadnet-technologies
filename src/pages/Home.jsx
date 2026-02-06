@@ -1,7 +1,6 @@
 import SEO from '../components/SEO';
 import ParallaxHero from '../components/ParallaxHero';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';
-import AnimatedStats from '../components/AnimatedStats';
 import Testimonials from '../components/Testimonials';
 import './Home.css';
 
@@ -75,33 +74,6 @@ const Home = () => {
         }
     ];
 
-    const stats = [
-        {
-            value: 150,
-            suffix: '+',
-            label: 'Projects Completed',
-            icon: '🚀'
-        },
-        {
-            value: 98,
-            suffix: '%',
-            label: 'Client Satisfaction',
-            icon: '⭐'
-        },
-        {
-            value: 50,
-            suffix: '+',
-            label: 'Happy Clients',
-            icon: '🤝'
-        },
-        {
-            value: 10,
-            suffix: '+',
-            label: 'Years Experience',
-            icon: '💼'
-        }
-    ];
-
     return (
         <div className="home-page">
             <SEO
@@ -110,16 +82,13 @@ const Home = () => {
                 keywords="IT solutions, web development, mobile apps, cloud computing, graphic design, product design, consulting, engineering, Ghana, Accra"
             />
 
-            {/* New Parallax Hero */}
+            {/* Parallax Hero */}
             <ParallaxHero
                 title="Your Partner in Digital Innovation"
                 subtitle="We provide cutting-edge technology solutions that drive growth and transform businesses across Africa"
                 ctaText="Get Started"
                 ctaLink="#services"
             />
-
-            {/* Animated Stats */}
-            <AnimatedStats stats={stats} />
 
             {/* Interactive Service Cards */}
             <InteractiveServiceCards services={services} />
@@ -136,8 +105,7 @@ const Home = () => {
                             with our innovative solutions and expert team.
                         </p>
                         <div className="cta-buttons">
-                            <a href="/contact" className="btn btn-primary btn-large">Contact Us Today</a>
-                            <a href="/solutions" className="btn btn-secondary btn-large">Explore Solutions</a>
+                            <a href="/solutions" className="btn btn-primary btn-large">Explore Services</a>
                         </div>
                     </div>
                 </div>
