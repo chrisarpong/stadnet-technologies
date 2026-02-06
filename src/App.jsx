@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import ScrollToTop from './components/ScrollToTop';
+import ScrollToTopOnMount from './components/ScrollToTopOnMount';
 import Home from './pages/Home';
 import Solutions from './pages/Solutions';
 import MobileWebDev from './pages/MobileWebDev';
