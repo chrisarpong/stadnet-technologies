@@ -53,7 +53,7 @@
 }
 
 .logo-text-brand {
-    color: var(--color-white);
+    color: var(--color-white) !important;
     font-weight: 700;
     font-size: 1.25rem;
     font-family: var(--font-heading);
