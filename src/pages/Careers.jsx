@@ -1,43 +1,51 @@
 import Hero from '../components/Hero';
+import InteractiveServiceCards from '../components/InteractiveServiceCards';
+import { FaLaptopCode, FaPaintBrush, FaCloud, FaServer, FaBullhorn, FaTasks } from 'react-icons/fa';
 import './Careers.css';
 
 const Careers = () => {
     const positions = [
         {
             title: 'Senior Full Stack Developer',
-            location: 'Accra, Ghana / Remote',
-            type: 'Full-time',
-            description: 'Join our development team to build cutting-edge web and mobile applications using React, Node.js, and cloud technologies.'
+            description: 'Accra, Ghana / Remote • Full-time • Join our development team to build cutting-edge web and mobile applications using React, Node.js, and cloud technologies.',
+            icon: <FaLaptopCode />,
+            link: '/contact',
+            linkText: 'Apply Now'
         },
         {
             title: 'UI/UX Designer',
-            location: 'Accra, Ghana',
-            type: 'Full-time',
-            description: 'Create beautiful, user-centered designs for web and mobile applications using modern design tools and methodologies.'
+            description: 'Accra, Ghana • Full-time • Create beautiful, user-centered designs for web and mobile applications using modern design tools and methodologies.',
+            icon: <FaPaintBrush />,
+            link: '/contact',
+            linkText: 'Apply Now'
         },
         {
             title: 'Cloud Solutions Architect',
-            location: 'Accra, Ghana / Remote',
-            type: 'Full-time',
-            description: 'Design and implement scalable cloud infrastructure solutions for enterprise clients using AWS, Azure, and GCP.'
+            description: 'Accra, Ghana / Remote • Full-time • Design and implement scalable cloud infrastructure solutions for enterprise clients using AWS, Azure, and GCP.',
+            icon: <FaCloud />,
+            link: '/contact',
+            linkText: 'Apply Now'
         },
         {
             title: 'DevOps Engineer',
-            location: 'Remote',
-            type: 'Full-time',
-            description: 'Build and maintain CI/CD pipelines, automate infrastructure, and ensure system reliability and performance.'
+            description: 'Remote • Full-time • Build and maintain CI/CD pipelines, automate infrastructure, and ensure system reliability and performance.',
+            icon: <FaServer />,
+            link: '/contact',
+            linkText: 'Apply Now'
         },
         {
             title: 'Digital Marketing Specialist',
-            location: 'Accra, Ghana',
-            type: 'Full-time',
-            description: 'Drive our digital marketing initiatives across social media, content marketing, and SEO to grow our brand presence.'
+            description: 'Accra, Ghana • Full-time • Drive our digital marketing initiatives across social media, content marketing, and SEO to grow our brand presence.',
+            icon: <FaBullhorn />,
+            link: '/contact',
+            linkText: 'Apply Now'
         },
         {
             title: 'Project Manager',
-            location: 'Accra, Ghana',
-            type: 'Full-time',
-            description: 'Lead cross-functional teams to deliver technology projects on time and within budget while exceeding client expectations.'
+            description: 'Accra, Ghana • Full-time • Lead cross-functional teams to deliver technology projects on time and within budget while exceeding client expectations.',
+            icon: <FaTasks />,
+            link: '/contact',
+            linkText: 'Apply Now'
         }
     ];
 
@@ -60,28 +68,8 @@ const Careers = () => {
                         </p>
                     </div>
 
-                    <h3 className="text-center mb-lg">Open Positions</h3>
-                    <div className="positions-grid">
-                        {positions.map((position, index) => (
-                            <div key={index} className="position-card glass-card" style={{ animationDelay: `${index * 100}ms` }}>
-                                <div className="position-header">
-                                    <h4>{position.title}</h4>
-                                    <span className="position-type">{position.type}</span>
-                                </div>
-                                <div className="position-meta">
-                                    <span className="position-location">
-                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                            <path d="M8 8C9.10457 8 10 7.10457 10 6C10 4.89543 9.10457 4 8 4C6.89543 4 6 4.89543 6 6C6 7.10457 6.89543 8 8 8Z" stroke="currentColor" strokeWidth="1.5" />
-                                            <path d="M8 14C10 11.3333 14 9.05714 14 6C14 2.90729 11.3137 1 8 1C4.68629 1 2 2.90729 2 6C2 9.05714 6 11.3333 8 14Z" stroke="currentColor" strokeWidth="1.5" />
-                                        </svg>
-                                        {position.location}
-                                    </span>
-                                </div>
-                                <p className="position-description">{position.description}</p>
-                                <a href="/contact" className="btn btn-primary">Apply Now</a>
-                            </div>
-                        ))}
-                    </div>
+                    <h3 className="section-title text-center mb-lg">Open Positions</h3>
+                    <InteractiveServiceCards services={positions} />
 
                     <div className="no-position-cta glass-light p-lg rounded-lg mt-xl text-center">
                         <h4>Don't see the right position?</h4>

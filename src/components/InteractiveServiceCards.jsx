@@ -58,7 +58,7 @@ const InteractiveServiceCards = ({ services }) => {
                                 <p className="service-description">{service.description}</p>
                                 {service.link ? (
                                     <Link to={service.link} className="service-link">
-                                        Explore {service.title}
+                                        {service.linkText || `Explore ${service.title}`}
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                             <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
