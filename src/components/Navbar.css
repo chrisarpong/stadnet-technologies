@@ -313,6 +313,10 @@
         max-height: 800px;
         padding: 0.5rem 0;
         margin-bottom: 1rem;
+        /* Ensure it overrides any hover state */
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 
     .dropdown-item {
@@ -320,9 +324,11 @@
         font-size: 0.9rem;
     }
 
+    /* Disable hover interactions on mobile that might conflict */
     .nav-dropdown:hover .dropdown-menu {
-        max-height: 0;
-        padding: 0;
+        /* Do nothing on hover for mobile, let click/active handle it */
+        /* If we need to suppress desktop hover styles that leak through: */
+        animation: none;
     }
 
     /* Theme toggle in mobile menu */
