@@ -53,7 +53,7 @@
 }
 
 .logo-text-brand {
-    color: var(--color-primary);
+    color: var(--color-white);
     font-weight: 700;
     font-size: 1.25rem;
     font-family: var(--font-heading);
@@ -62,7 +62,7 @@
 }
 
 .navbar-logo:hover .logo-text-brand {
-    color: var(--color-teal);
+    color: var(--color-primary);
 }
 
 .logo-text {
