@@ -61,7 +61,7 @@ const Navbar = () => {
                         <Link to="/" className="nav-link">Home</Link>
                         <Link to="/solutions" className="nav-link">Solutions</Link>
 
-                        <div className="nav-dropdown">
+                        <div className={`nav-dropdown ${activeDropdown === 'services' ? 'active' : ''}`}>
                             <button
                                 className="nav-link dropdown-toggle"
                                 onClick={() => toggleDropdown('services')}
