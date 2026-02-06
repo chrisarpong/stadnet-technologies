@@ -13,11 +13,13 @@
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
     text-align: center;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-primary-dark);
     margin-bottom: var(--spacing-md);
+    transition: color var(--transition-normal);
+}
+
+.section-title:hover {
+    color: var(--color-primary);
 }
 
 .section-subtitle {
