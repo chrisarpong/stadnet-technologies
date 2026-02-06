@@ -56,12 +56,18 @@ const InteractiveServiceCards = ({ services }) => {
                                     <h3 className="service-title">{service.title}</h3>
                                 </div>
                                 <p className="service-description">{service.description}</p>
-                                <Link to={service.link} className="service-link">
-                                    Explore {service.title}
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                        <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </Link>
+                                {service.link ? (
+                                    <Link to={service.link} className="service-link">
+                                        Explore {service.title}
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </Link>
+                                ) : (
+                                    <div className="service-link as-text">
+                                        <span style={{ fontSize: '0.9rem', opacity: 0.7 }}>Key Feature</span>
+                                    </div>
+                                )}
                             </div>
                             <div className="service-line"></div>
                         </div>
