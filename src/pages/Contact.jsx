@@ -35,7 +35,7 @@ const Contact = () => {
             // EmailJS configuration with your credentials
             const serviceId = 'service_fv1sml6';
             const templateId = 'template_akvlspq';
-            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+            const publicKey = 'BYTukTFrH6diIXbZt';
 
             await emailjs.sendForm(
                 serviceId,
