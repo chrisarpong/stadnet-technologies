@@ -1,31 +1,41 @@
 import Hero from '../components/Hero';
+import Breadcrumb from '../components/Breadcrumb';
+import SEO from '../components/SEO';
+import InteractiveServiceCards from '../components/InteractiveServiceCards';
+import { FaMobileAlt, FaLaptopCode, FaWifi, FaGlobe, FaShoppingCart, FaServer } from 'react-icons/fa';
 import './ServicePage.css';
 
 const MobileWebDev = () => {
     const features = [
         {
             title: 'Native Mobile Apps',
-            description: 'iOS and Android apps built with Swift, Kotlin, and platform-specific tools for optimal performance.'
+            description: 'iOS and Android apps built with Swift, Kotlin, and platform-specific tools for optimal performance.',
+            icon: <FaMobileAlt />
         },
         {
             title: 'Cross-Platform Development',
-            description: 'React Native and Flutter apps that work seamlessly across multiple platforms.'
+            description: 'React Native and Flutter apps that work seamlessly across multiple platforms.',
+            icon: <FaLaptopCode />
         },
         {
             title: 'Progressive Web Apps',
-            description: 'Modern web applications with offline capabilities and native app-like experiences.'
+            description: 'Modern web applications with offline capabilities and native app-like experiences.',
+            icon: <FaWifi />
         },
         {
             title: 'Responsive Web Design',
-            description: 'Beautiful, mobile-first websites that adapt perfectly to any screen size.'
+            description: 'Beautiful, mobile-first websites that adapt perfectly to any screen size.',
+            icon: <FaGlobe />
         },
         {
             title: 'E-Commerce Solutions',
-            description: 'Full-featured online stores with secure payment processing and inventory management.'
+            description: 'Full-featured online stores with secure payment processing and inventory management.',
+            icon: <FaShoppingCart />
         },
         {
             title: 'API Development',
-            description: 'RESTful and GraphQL APIs for seamless integration with third-party services.'
+            description: 'RESTful and GraphQL APIs for seamless integration with third-party services.',
+            icon: <FaServer />
         }
     ];
 
@@ -64,15 +74,8 @@ const MobileWebDev = () => {
                         </p>
                     </div>
 
-                    <h3 className="text-center mb-lg">What We Offer</h3>
-                    <div className="grid grid-3">
-                        {features.map((feature, index) => (
-                            <div key={index} className="feature-card glass-card" style={{ animationDelay: `${index * 100}ms` }}>
-                                <h4>{feature.title}</h4>
-                                <p>{feature.description}</p>
-                            </div>
-                        ))}
-                    </div>
+                    <h3 className="section-title text-center mb-lg">What We Offer</h3>
+                    <InteractiveServiceCards services={features} />
                 </div>
             </section>
         </div>

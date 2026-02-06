@@ -1,4 +1,6 @@
 import Hero from '../components/Hero';
+import InteractiveServiceCards from '../components/InteractiveServiceCards';
+import { FaCloudUploadAlt, FaNetworkWired, FaServer, FaShieldAlt, FaInfinity, FaMoneyBillWave } from 'react-icons/fa';
 import './ServicePage.css';
 import Breadcrumb from '../components/Breadcrumb';
 
@@ -7,27 +9,33 @@ const CloudComputing = () => {
     const features = [
         {
             title: 'Cloud Migration',
-            description: 'Seamless transition of your infrastructure and applications to the cloud with minimal downtime.'
+            description: 'Seamless transition of your infrastructure and applications to the cloud with minimal downtime.',
+            icon: <FaCloudUploadAlt />
         },
         {
             title: 'Infrastructure Management',
-            description: 'Comprehensive cloud infrastructure setup, monitoring, and optimization services.'
+            description: 'Comprehensive cloud infrastructure setup, monitoring, and optimization services.',
+            icon: <FaNetworkWired />
         },
         {
             title: 'Serverless Architecture',
-            description: 'Build and deploy applications without managing servers using AWS Lambda, Azure Functions, and more.'
+            description: 'Build and deploy applications without managing servers using AWS Lambda, Azure Functions, and more.',
+            icon: <FaServer />
         },
         {
             title: 'Cloud Security',
-            description: 'Enterprise-grade security measures to protect your data and applications in the cloud.'
+            description: 'Enterprise-grade security measures to protect your data and applications in the cloud.',
+            icon: <FaShieldAlt />
         },
         {
             title: 'DevOps & CI/CD',
-            description: 'Automated deployment pipelines and continuous integration for faster, reliable releases.'
+            description: 'Automated deployment pipelines and continuous integration for faster, reliable releases.',
+            icon: <FaInfinity />
         },
         {
             title: 'Cloud Cost Optimization',
-            description: 'Reduce cloud spending while maintaining performance through intelligent resource management.'
+            description: 'Reduce cloud spending while maintaining performance through intelligent resource management.',
+            icon: <FaMoneyBillWave />
         }
     ];
 
@@ -52,15 +60,8 @@ const CloudComputing = () => {
                         </p>
                     </div>
 
-                    <h3 className="text-center mb-lg">Cloud Services</h3>
-                    <div className="grid grid-3">
-                        {features.map((feature, index) => (
-                            <div key={index} className="feature-card glass-card" style={{ animationDelay: `${index * 100}ms` }}>
-                                <h4>{feature.title}</h4>
-                                <p>{feature.description}</p>
-                            </div>
-                        ))}
-                    </div>
+                    <h3 className="section-title text-center mb-lg">Cloud Services</h3>
+                    <InteractiveServiceCards services={features} />
                 </div>
             </section>
         </div>

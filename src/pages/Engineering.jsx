@@ -1,4 +1,6 @@
 import Hero from '../components/Hero';
+import InteractiveServiceCards from '../components/InteractiveServiceCards';
+import { FaServer, FaRobot, FaProjectDiagram, FaDigitalTachograph, FaDatabase, FaCode } from 'react-icons/fa';
 import './ServicePage.css';
 import Breadcrumb from '../components/Breadcrumb';
 
@@ -7,27 +9,33 @@ const Engineering = () => {
     const features = [
         {
             title: 'Legacy System Modernization',
-            description: 'Transform outdated systems into modern, efficient applications without disrupting operations.'
+            description: 'Transform outdated systems into modern, efficient applications without disrupting operations.',
+            icon: <FaServer />
         },
         {
             title: 'Process Automation',
-            description: 'Automate repetitive tasks and workflows to improve efficiency and reduce errors.'
+            description: 'Automate repetitive tasks and workflows to improve efficiency and reduce errors.',
+            icon: <FaRobot />
         },
         {
             title: 'Enterprise Integration',
-            description: 'Connect disparate systems and applications for seamless data flow across your organization.'
+            description: 'Connect disparate systems and applications for seamless data flow across your organization.',
+            icon: <FaProjectDiagram />
         },
         {
             title: 'Digital Transformation',
-            description: 'Comprehensive digitization strategies to modernize your entire business operation.'
+            description: 'Comprehensive digitization strategies to modernize your entire business operation.',
+            icon: <FaDigitalTachograph />
         },
         {
             title: 'Data Migration',
-            description: 'Safe and efficient migration of data from legacy systems to modern platforms.'
+            description: 'Safe and efficient migration of data from legacy systems to modern platforms.',
+            icon: <FaDatabase />
         },
         {
             title: 'Custom Software Development',
-            description: 'Bespoke software solutions designed to address your unique business challenges.'
+            description: 'Bespoke software solutions designed to address your unique business challenges.',
+            icon: <FaCode />
         }
     ];
 
@@ -52,15 +60,8 @@ const Engineering = () => {
                         </p>
                     </div>
 
-                    <h3 className="text-center mb-lg">Engineering Services</h3>
-                    <div className="grid grid-3">
-                        {features.map((feature, index) => (
-                            <div key={index} className="feature-card glass-card" style={{ animationDelay: `${index * 100}ms` }}>
-                                <h4>{feature.title}</h4>
-                                <p>{feature.description}</p>
-                            </div>
-                        ))}
-                    </div>
+                    <h3 className="section-title text-center mb-lg">Engineering Services</h3>
+                    <InteractiveServiceCards services={features} />
                 </div>
             </section>
         </div>

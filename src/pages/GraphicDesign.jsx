@@ -1,4 +1,6 @@
 import Hero from '../components/Hero';
+import InteractiveServiceCards from '../components/InteractiveServiceCards';
+import { FaFingerprint, FaPenNib, FaFileAlt, FaShareAlt, FaBoxOpen, FaChartPie } from 'react-icons/fa';
 import './ServicePage.css';
 import Breadcrumb from '../components/Breadcrumb';
 
@@ -7,27 +9,33 @@ const GraphicDesign = () => {
     const features = [
         {
             title: 'Brand Identity',
-            description: 'Create a memorable brand identity that reflects your values and resonates with your audience.'
+            description: 'Create a memorable brand identity that reflects your values and resonates with your audience.',
+            icon: <FaFingerprint />
         },
         {
             title: 'Logo Design',
-            description: 'Professional logo design that captures your brand essence and stands out in the market.'
+            description: 'Professional logo design that captures your brand essence and stands out in the market.',
+            icon: <FaPenNib />
         },
         {
             title: 'Marketing Materials',
-            description: 'Brochures, flyers, posters, and other print materials that effectively communicate your message.'
+            description: 'Brochures, flyers, posters, and other print materials that effectively communicate your message.',
+            icon: <FaFileAlt />
         },
         {
             title: 'Social Media Graphics',
-            description: 'Eye-catching visuals optimized for various social media platforms to boost engagement.'
+            description: 'Eye-catching visuals optimized for various social media platforms to boost engagement.',
+            icon: <FaShareAlt />
         },
         {
             title: 'Packaging Design',
-            description: 'Product packaging that attracts customers and enhances shelf appeal.'
+            description: 'Product packaging that attracts customers and enhances shelf appeal.',
+            icon: <FaBoxOpen />
         },
         {
             title: 'Infographics',
-            description: 'Data visualization and infographics that make complex information easy to understand.'
+            description: 'Data visualization and infographics that make complex information easy to understand.',
+            icon: <FaChartPie />
         }
     ];
 
@@ -52,15 +60,8 @@ const GraphicDesign = () => {
                         </p>
                     </div>
 
-                    <h3 className="text-center mb-lg">Design Services</h3>
-                    <div className="grid grid-3">
-                        {features.map((feature, index) => (
-                            <div key={index} className="feature-card glass-card" style={{ animationDelay: `${index * 100}ms` }}>
-                                <h4>{feature.title}</h4>
-                                <p>{feature.description}</p>
-                            </div>
-                        ))}
-                    </div>
+                    <h3 className="section-title text-center mb-lg">Design Services</h3>
+                    <InteractiveServiceCards services={features} />
                 </div>
             </section>
         </div>
