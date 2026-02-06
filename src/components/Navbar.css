@@ -94,7 +94,8 @@
     display: block;
     width: 25px;
     height: 3px;
-    background: var(--color-primary);
+    background: var(--color-white);
+    /* Changed to white for better visibility */
     border-radius: 2px;
     transition: all var(--transition-fast);
 }
