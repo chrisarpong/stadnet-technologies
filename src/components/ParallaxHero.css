@@ -264,7 +264,7 @@
         height: auto;
         min-height: auto;
         padding: var(--spacing-2xl) 0;
-        padding-top: 120px;
+        padding-top: 160px;
         /* Extra padding for mobile navbar */
     }
 
