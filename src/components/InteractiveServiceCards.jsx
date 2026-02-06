@@ -31,50 +31,41 @@ const InteractiveServiceCards = ({ services }) => {
     }, []);
 
     return (
-        <section className="interactive-services">
-            <div className="container">
-                <h2 className="section-title">Our Solutions</h2>
-                <p className="section-subtitle">
-                    Comprehensive technology services tailored to your business needs
-                </p>
-
-                <div className="services-list">
-                    {services.map((service, index) => (
-                        <div
-                            key={index}
-                            className="service-item"
-                            ref={el => servicesRef.current[index] = el}
-                        >
-                            <div className="service-number">
-                                {String(index + 1).padStart(2, '0')}
+        <div className="services-list">
+            {services.map((service, index) => (
+                <div
+                    key={index}
+                    className="service-item"
+                    ref={el => servicesRef.current[index] = el}
+                >
+                    <div className="service-number">
+                        {String(index + 1).padStart(2, '0')}
+                    </div>
+                    <div className="service-content">
+                        <div className="service-header">
+                            <div className="service-icon-wrapper">
+                                {service.icon}
                             </div>
-                            <div className="service-content">
-                                <div className="service-header">
-                                    <div className="service-icon-wrapper">
-                                        {service.icon}
-                                    </div>
-                                    <h3 className="service-title">{service.title}</h3>
-                                </div>
-                                <p className="service-description">{service.description}</p>
-                                {service.link ? (
-                                    <Link to={service.link} className="service-link">
-                                        {service.linkText || `Explore ${service.title}`}
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
-                                    </Link>
-                                ) : (
-                                    <div className="service-link as-text">
-                                        <span style={{ fontSize: '0.9rem', opacity: 0.7 }}>Key Feature</span>
-                                    </div>
-                                )}
-                            </div>
-                            <div className="service-line"></div>
+                            <h3 className="service-title">{service.title}</h3>
                         </div>
-                    ))}
+                        <p className="service-description">{service.description}</p>
+                        {service.link ? (
+                            <Link to={service.link} className="service-link">
+                                {service.linkText || `Explore ${service.title}`}
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </Link>
+                        ) : (
+                            <div className="service-link as-text">
+                                <span style={{ fontSize: '0.9rem', opacity: 0.7 }}>Key Feature</span>
+                            </div>
+                        )}
+                    </div>
+                    <div className="service-line"></div>
                 </div>
-            </div>
-        </section>
+            ))}
+        </div>
     );
 };
 
