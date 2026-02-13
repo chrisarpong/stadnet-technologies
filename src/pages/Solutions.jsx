@@ -52,10 +52,6 @@ const Solutions = () => {
 
             <section className="interactive-services">
                 <div className="container">
-                    <h2 className="section-title">Our Solutions</h2>
-                    <p className="section-subtitle">
-                        Comprehensive technology services tailored to your business needs
-                    </p>
                     <InteractiveServiceCards services={allSolutions} />
                 </div>
             </section>

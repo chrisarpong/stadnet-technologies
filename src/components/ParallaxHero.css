@@ -327,7 +327,7 @@
     }
 
     .hero-title {
-        font-size: clamp(1.5rem, 10vw, 2rem);
+        font-size: 2rem;
     }
 
     .hero-subtitle {

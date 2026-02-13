@@ -21,8 +21,25 @@ const Navbar = () => {
         setActiveDropdown(null);
     }, [location]);
 
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isMobileMenuOpen]);
+
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
+    const closeMobileMenu = () => {
+        setIsMobileMenuOpen(false);
+        setActiveDropdown(null);
     };
 
     const toggleDropdown = (dropdown) => {
@@ -48,7 +65,7 @@ const Navbar = () => {
                     </Link>
 
                     <button
-                        className="mobile-menu-toggle"
+                        className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
                         onClick={toggleMobileMenu}
                         aria-label="Toggle menu"
                     >
@@ -56,6 +73,14 @@ const Navbar = () => {
                         <span></span>
                         <span></span>
                     </button>
+
+                    {/* Mobile menu backdrop overlay */}
+                    {isMobileMenuOpen && (
+                        <div
+                            className="mobile-menu-overlay"
+                            onClick={closeMobileMenu}
+                        />
+                    )}
 
                     <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
                         <Link to="/" className="nav-link">Home</Link>
@@ -90,7 +115,7 @@ const Navbar = () => {
                         </div>
 
                         <Link to="/careers" className="nav-link">Careers</Link>
-                        <Link to="/contact" className="nav-link">Contact</Link>
+                        <Link to="/contact" className="nav-link nav-link-primary">Contact</Link>
                     </div>
                 </div>
             </div>
