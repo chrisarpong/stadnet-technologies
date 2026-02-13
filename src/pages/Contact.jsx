@@ -7,9 +7,9 @@ import './Contact.css';
 const Contact = () => {
     const formRef = useRef();
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
+        user_name: '',
+        user_email: '',
+        contact_number: '',
         subject: '',
         message: ''
     });
@@ -52,7 +52,7 @@ const Contact = () => {
             });
 
             // Reset form
-            setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+            setFormData({ user_name: '', user_email: '', contact_number: '', subject: '', message: '' });
 
             // Clear success message after 5 seconds
             setTimeout(() => {
@@ -168,7 +168,7 @@ const Contact = () => {
                                         type="text"
                                         id="name"
                                         name="user_name"
-                                        value={formData.name}
+                                        value={formData.user_name}
                                         onChange={handleChange}
                                         required
                                         placeholder="John Doe"
@@ -181,7 +181,7 @@ const Contact = () => {
                                         type="email"
                                         id="email"
                                         name="user_email"
-                                        value={formData.email}
+                                        value={formData.user_email}
                                         onChange={handleChange}
                                         required
                                         placeholder="john@example.com"
@@ -194,7 +194,7 @@ const Contact = () => {
                                         type="tel"
                                         id="phone"
                                         name="contact_number"
-                                        value={formData.phone}
+                                        value={formData.contact_number}
                                         onChange={handleChange}
                                         placeholder="+233 50 123 4567"
                                     />
