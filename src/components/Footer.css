@@ -1,8 +1,12 @@
 .footer {
+    background-color: #1A1A1A;
+    /* Fallback */
     background: linear-gradient(180deg, #2C2C2C 0%, #1A1A1A 100%);
     color: #E0E0E0;
     padding: var(--spacing-3xl) 0 var(--spacing-lg);
     margin-top: var(--spacing-3xl);
+    position: relative;
+    z-index: 10;
 }
 
 .footer-content {

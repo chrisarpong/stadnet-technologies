@@ -100,11 +100,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-off-white);
+    background: rgba(0, 102, 255, 0.08);
     border: none;
     border-radius: var(--radius-md);
     font-size: 1.5rem;
-    color: var(--color-primary);
+    color: var(--color-accent);
     transition: all var(--transition-normal);
     flex-shrink: 0;
 }
