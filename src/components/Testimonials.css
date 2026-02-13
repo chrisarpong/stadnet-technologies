@@ -19,7 +19,7 @@
 
 .testimonial-card:hover {
     transform: translateY(-4px);
-    background: #F8F8F8;
+    background: #F5F5F5;
 }
 
 .stars-rating {

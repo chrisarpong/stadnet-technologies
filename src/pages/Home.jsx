@@ -89,7 +89,7 @@ const Home = () => {
             />
 
             {/* Interactive Service Cards */}
-            <section className="section section-alt services-section">
+            <section className="section services-section">
                 <div className="container">
                     <div className="section-header text-center">
                         <h2 className="text-gradient">Our Services</h2>
