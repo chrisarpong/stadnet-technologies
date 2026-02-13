@@ -18,7 +18,7 @@ const Hero = ({
         <section className={`hero hero-${height}`} style={heroStyle}>
             {overlay && <div className="hero-overlay"></div>}
             <div className="container">
-                <div className="hero-content glass-card animate-fadeInUp">
+                <div className="hero-content animate-fadeInUp">
                     <h1 className="hero-title">{title}</h1>
                     {subtitle && <p className="hero-subtitle">{subtitle}</p>}
                     {ctaText && ctaLink && (

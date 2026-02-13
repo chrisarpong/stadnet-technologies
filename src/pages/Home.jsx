@@ -89,7 +89,17 @@ const Home = () => {
             />
 
             {/* Interactive Service Cards */}
-            <InteractiveServiceCards services={services} />
+            <section className="section section-alt services-section">
+                <div className="container">
+                    <div className="section-header text-center">
+                        <h2 className="text-gradient">Our Services</h2>
+                        <p className="section-subtitle">
+                            Comprehensive technology solutions tailored to drive your business forward
+                        </p>
+                    </div>
+                    <InteractiveServiceCards services={services} />
+                </div>
+            </section>
 
             {/* Testimonials Section */}
             <Testimonials />

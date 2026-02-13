@@ -110,7 +110,7 @@
 }
 
 .service-item:hover .service-icon-wrapper {
-    background: var(--color-primary);
+    background: var(--color-accent);
     color: var(--color-white);
     transform: scale(1.05);
 }
@@ -139,7 +139,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--color-primary);
+    color: var(--color-accent);
     font-weight: 600;
     text-decoration: none;
     font-size: 0.95rem;
@@ -154,8 +154,8 @@
     bottom: -2px;
     left: 0;
     width: 0;
-    height: 1px;
-    background: var(--color-primary);
+    height: 2px;
+    background: var(--color-accent);
     transition: width var(--transition-normal);
 }
 
@@ -165,7 +165,7 @@
 
 .service-link:hover {
     gap: 0.75rem;
-    color: var(--color-primary-dark);
+    color: var(--color-accent-dark);
 }
 
 .service-link svg {
