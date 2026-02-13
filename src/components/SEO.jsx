@@ -8,10 +8,10 @@ const SEO = ({
     ogImage,
     canonicalUrl
 }) => {
-    const siteTitle = "Stadnet Technologies";
+    const siteTitle = "KYNOVA";
     const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     const defaultDescription = "Leading provider of mobile & web development, cloud computing, graphic design, and consulting services in Ghana.";
-    const defaultKeywords = "IT solutions, web development, mobile apps, cloud computing, Ghana, Stadnet Technologies";
+    const defaultKeywords = "IT solutions, web development, mobile apps, cloud computing, Ghana, KYNOVA";
     const defaultImage = `${window.location.origin}/logo.png`;
 
     return (

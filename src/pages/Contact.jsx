@@ -65,7 +65,7 @@ const Contact = () => {
                 loading: false,
                 success: false,
                 error: true,
-                message: 'Oops! Something went wrong. Please try again or email us directly at info@stadnet.com'
+                message: 'Oops! Something went wrong. Please try again or email us directly at info@kynova.com'
             });
         }
     };
@@ -74,8 +74,8 @@ const Contact = () => {
         <div className="contact-page">
             <SEO
                 title="Contact Us"
-                description="Get in touch with Stadnet Technologies. We're here to help with your IT and digital transformation needs."
-                keywords="contact Stadnet, IT support Ghana, web development inquiry, cloud computing consultation"
+                description="Get in touch with KYNOVA. We're here to help with your IT and digital transformation needs."
+                keywords="contact KYNOVA, IT support Ghana, web development inquiry, cloud computing consultation"
             />
 
             <Hero
@@ -111,8 +111,8 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h5>Email Us</h5>
-                                        <p><a href="mailto:info@stadnet.com">info@stadnet.com</a></p>
-                                        <p><a href="mailto:support@stadnet.com">support@stadnet.com</a></p>
+                                        <p><a href="mailto:info@kynova.com">info@kynova.com</a></p>
+                                        <p><a href="mailto:support@kynova.com">support@kynova.com</a></p>
                                     </div>
                                 </div>
 

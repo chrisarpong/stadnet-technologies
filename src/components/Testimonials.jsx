@@ -8,7 +8,7 @@ const Testimonials = () => {
             position: "CEO",
             company: "Tech Innovations Ghana",
             image: "https://ui-avatars.com/api/?name=John+Mensah&background=0066CC&color=fff&size=80",
-            quote: "Stadnet Technologies transformed our digital infrastructure completely. Their cloud solutions helped us scale efficiently while reducing costs by 40%. Highly professional team!",
+            quote: "KYNOVA transformed our digital infrastructure completely. Their cloud solutions helped us scale efficiently while reducing costs by 40%. Highly professional team!",
             rating: 5
         },
         {
@@ -16,7 +16,7 @@ const Testimonials = () => {
             position: "Product Manager",
             company: "Digital Solutions Ltd",
             image: "https://ui-avatars.com/api/?name=Ama+Osei&background=00A896&color=fff&size=80",
-            quote: "Working with Stadnet was a game-changer for our mobile app development. Their expertise in React Native delivered a beautiful, performant app that exceeded our expectations.",
+            quote: "Working with KYNOVA was a game-changer for our mobile app development. Their expertise in React Native delivered a beautiful, performant app that exceeded our expectations.",
             rating: 5
         },
         {
@@ -24,7 +24,7 @@ const Testimonials = () => {
             position: "Founder",
             company: "StartUp Hub",
             image: "https://ui-avatars.com/api/?name=Kwame+Asante&background=0099FF&color=fff&size=80",
-            quote: "The consulting services from Stadnet helped us make critical technology decisions. Their team provided clear, actionable insights that saved us time and money.",
+            quote: "The consulting services from KYNOVA helped us make critical technology decisions. Their team provided clear, actionable insights that saved us time and money.",
             rating: 5
         }
     ];

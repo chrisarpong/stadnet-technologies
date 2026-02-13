@@ -17,7 +17,7 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
-        setIsMobileMenuOpen(false);
+        setIsMobileMenuOpen(false); // eslint-disable-line
         setActiveDropdown(null);
     }, [location]);
 
@@ -43,8 +43,8 @@ const Navbar = () => {
             <div className="container">
                 <div className="navbar-content">
                     <Link to="/" className="navbar-logo">
-                        <img src="/logo.png" alt="Stadnet Technologies" className="logo-image" />
-                        <span className="logo-text-brand">Stadnet</span>
+                        <img src="/logo.png" alt="KYNOVA" className="logo-image" />
+                        <span className="logo-text-brand">KYNOVA</span>
                     </Link>
 
                     <button

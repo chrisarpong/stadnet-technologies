@@ -78,7 +78,7 @@ const Home = () => {
         <div className="home-page">
             <SEO
                 title="Home"
-                description="Stadnet Technologies - Leading provider of mobile & web development, cloud computing, graphic design, product design, consulting, and engineering services in Ghana."
+                description="KYNOVA - Leading provider of mobile & web development, cloud computing, graphic design, product design, consulting, and engineering services in Ghana."
                 keywords="IT solutions, web development, mobile apps, cloud computing, graphic design, product design, consulting, engineering, Ghana, Accra"
             />
 
@@ -99,7 +99,7 @@ const Home = () => {
                     <div className="cta-content glass-card text-center" data-aos="zoom-in">
                         <h2>Ready to Transform Your Business?</h2>
                         <p>
-                            Let's discuss how Stadnet Technologies can help you achieve your digital goals
+                            Let's discuss how KYNOVA can help you achieve your digital goals
                             with our innovative solutions and expert team.
                         </p>
                         <div className="cta-buttons">

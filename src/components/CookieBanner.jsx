@@ -7,7 +7,7 @@ const CookieBanner = () => {
             buttonText="Accept All"
             declineButtonText="Decline"
             enableDeclineButton
-            cookieName="stadnet-cookie-consent"
+            cookieName="kynova-cookie-consent"
             style={{
                 background: "rgba(26, 26, 46, 0.98)",
                 backdropFilter: "blur(10px)",

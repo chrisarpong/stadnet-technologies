@@ -22,7 +22,7 @@ const useFormValidation = () => {
                 else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) error = 'Invalid email address';
                 break;
             case 'phone':
-                if (value && !/^[\d\s\-\+\(\)]+$/.test(value)) error = 'Invalid phone number';
+                if (value && !/^[\d\s\-+()]+$/.test(value)) error = 'Invalid phone number';
                 break;
             case 'subject':
                 if (!value.trim()) error = 'Subject is required';

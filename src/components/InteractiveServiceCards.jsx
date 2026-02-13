@@ -19,12 +19,13 @@ const InteractiveServiceCards = ({ services }) => {
             { threshold: 0.1 }
         );
 
-        servicesRef.current.forEach((ref) => {
+        const currentServices = servicesRef.current;
+        currentServices.forEach((ref) => {
             if (ref) observer.observe(ref);
         });
 
         return () => {
-            servicesRef.current.forEach((ref) => {
+            currentServices.forEach((ref) => {
                 if (ref) observer.unobserve(ref);
             });
         };

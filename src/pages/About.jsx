@@ -46,7 +46,7 @@ const About = () => {
     return (
         <div className="about-page">
             <Hero
-                title="About Stadnet"
+                title="About KYNOVA"
                 subtitle="Building the future of digital technology, one solution at a time."
                 height="medium"
             />
@@ -58,7 +58,7 @@ const About = () => {
                         <h2 className="text-gradient mb-md">Our Story</h2>
                         <div className="story-content">
                             <p className="mb-md">
-                                Founded in Accra, Ghana, Stadnet Technologies emerged from a simple yet powerful belief:
+                                Founded in Accra, Ghana, KYNOVA emerged from a simple yet powerful belief:
                                 that technology should be an enabler, not a barrier. What started as a small team of
                                 passionate developers has grown into a premier digital transformation agency.
                             </p>

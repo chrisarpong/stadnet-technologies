@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://stadnet-technologies.vercel.app/sitemap.xml
+Sitemap: https://kynova.vercel.app/sitemap.xml

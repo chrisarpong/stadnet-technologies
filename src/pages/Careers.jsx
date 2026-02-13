@@ -60,9 +60,9 @@ const Careers = () => {
             <section className="section">
                 <div className="container">
                     <div className="careers-intro glass-light p-xl rounded-lg mb-xl animate-fadeInUp">
-                        <h2 className="text-gradient mb-md">Why Work at Stadnet?</h2>
+                        <h2 className="text-gradient mb-md">Why Work at KYNOVA?</h2>
                         <p>
-                            At Stadnet Technologies, we believe in fostering a culture of innovation, collaboration,
+                            At KYNOVA, we believe in fostering a culture of innovation, collaboration,
                             and continuous learning. We offer competitive compensation, flexible work arrangements,
                             professional development opportunities, and a supportive environment where your ideas matter.
                         </p>

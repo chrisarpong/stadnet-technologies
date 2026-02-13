@@ -48,7 +48,7 @@ const MobileWebDev = () => {
     return (
         <div className="service-page">
             <SEO
-                title="Mobile & Web Development Services | Stadnet Technologies"
+                title="Mobile & Web Development Services | KYNOVA"
                 description="Professional mobile and web development services in Ghana. Build cutting-edge applications with React, Node.js, and modern technologies."
                 keywords="mobile development, web development, React, Node.js, Ghana"
             />
@@ -68,7 +68,7 @@ const MobileWebDev = () => {
                     <div className="service-intro glass-light p-xl rounded-lg mb-xl">
                         <h2 className="text-gradient mb-md">Crafting Digital Experiences</h2>
                         <p>
-                            At Stadnet Technologies, we specialize in creating cutting-edge mobile and web applications
+                            At KYNOVA, we specialize in creating cutting-edge mobile and web applications
                             that combine stunning design with robust functionality. Our team of experienced developers
                             uses the latest technologies and best practices to deliver solutions that exceed expectations.
                         </p>

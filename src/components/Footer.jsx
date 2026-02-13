@@ -22,7 +22,7 @@ const Footer = () => {
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                                     <path d="M2.5 5L8.5 9.5L10 10.5L11.5 9.5L17.5 5M3.5 16H16.5C17.0523 16 17.5 15.5523 17.5 15V5C17.5 4.44772 17.0523 4 16.5 4H3.5C2.94772 4 2.5 4.44772 2.5 5V15C2.5 15.5523 2.94772 16 3.5 16Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                                 </svg>
-                                <a href="mailto:info@stadnet.com">info@stadnet.com</a>
+                                <a href="mailto:info@kynova.com">info@kynova.com</a>
                             </p>
                             <p className="contact-item">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -46,9 +46,9 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-column">
-                        <h3 className="footer-title">About Stadnet</h3>
+                        <h3 className="footer-title">About KYNOVA</h3>
                         <p className="footer-about">
-                            Stadnet Technologies is a leading provider of innovative IT solutions,
+                            KYNOVA is a leading provider of innovative IT solutions,
                             specializing in mobile & web development, cloud computing, design services,
                             and digital transformation consulting.
                         </p>
@@ -73,7 +73,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>&copy; {currentYear} Stadnet Technologies. All rights reserved.</p>
+                    <p>&copy; {currentYear} KYNOVA. All rights reserved.</p>
                     <div className="footer-legal">
                         <a href="/privacy">Privacy Policy</a>
                         <span>•</span>

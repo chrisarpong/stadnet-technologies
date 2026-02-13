@@ -42,7 +42,7 @@ const FAQ = () => {
 
     const faqs = [
         {
-            question: "What services does Stadnet Technologies offer?",
+            question: "What services does KYNOVA offer?",
             answer: "We offer a comprehensive range of IT services including Mobile & Web Development, Cloud Computing, Graphic Design, Product Design, IT Consulting, and Engineering & Digitization services. Our team specializes in creating custom solutions tailored to your business needs."
         },
         {
