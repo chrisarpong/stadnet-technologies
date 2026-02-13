@@ -81,5 +81,7 @@
 
     .testimonial-card {
         padding: var(--spacing-lg);
+        background: #F5F5F5;
+        /* Mobile: Show grey background by default */
     }
 }

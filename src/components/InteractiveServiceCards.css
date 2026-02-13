@@ -197,6 +197,8 @@
         flex: 1 1 100%;
         min-width: unset;
         padding: var(--spacing-lg);
+        background: #F5F5F5;
+        /* Mobile: Show grey background by default */
     }
 
     .service-item:hover {

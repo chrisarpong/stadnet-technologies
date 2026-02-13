@@ -518,6 +518,11 @@ a:hover {
 
 @media (max-width: 768px) {
 
+  .glass-card {
+    background: #F5F5F5;
+    /* Mobile: Show grey background by default */
+  }
+
   .grid-2,
   .grid-3,
   .grid-4 {
