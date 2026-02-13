@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     padding: var(--spacing-xl);
-    background: linear-gradient(135deg, var(--color-off-white) 0%, var(--color-light-blue-bg) 100%);
+    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-off-white) 100%);
     text-align: center;
 }
 
@@ -16,7 +16,7 @@
     font-size: clamp(6rem, 15vw, 12rem);
     font-weight: 800;
     font-family: var(--font-heading);
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-teal) 100%);
+    background: linear-gradient(135deg, #333333 0%, #666666 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -73,7 +73,7 @@
 }
 
 .links-grid a:hover {
-    background: var(--color-light-blue-bg);
+    background: var(--color-off-white);
     transform: translateX(5px);
 }
 

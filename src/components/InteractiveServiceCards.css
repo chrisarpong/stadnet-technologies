@@ -1,6 +1,6 @@
 .interactive-services {
     padding: var(--spacing-3xl) 0;
-    background: linear-gradient(180deg, transparent 0%, rgba(0, 102, 204, 0.02) 50%, transparent 100%);
+    background: var(--color-off-white);
 }
 
 @media (max-width: 768px) {
@@ -19,7 +19,7 @@
 }
 
 .section-title:hover {
-    color: var(--color-primary);
+    color: var(--color-primary-light);
 }
 
 .section-subtitle {
@@ -41,95 +41,98 @@
     }
 }
 
-/* Services List */
+/* === FLEXBOX CARD GRID (redesigned from list) === */
 .services-list {
-    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .service-item {
     position: relative;
     display: flex;
-    gap: var(--spacing-lg);
-    padding: var(--spacing-xl) 0;
+    flex-direction: column;
+    flex: 1 1 calc(33.333% - 1.5rem);
+    min-width: 280px;
+    padding: var(--spacing-xl);
+    background: var(--color-white);
+    border: none;
+    border-radius: var(--radius-lg);
     opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .service-item.slide-in {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 .service-item:hover {
-    transform: translateX(10px);
+    transform: translateY(-4px);
+    background: #F5F5F5;
 }
 
-.service-item:hover .service-number {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    transform: scale(1.1);
-}
-
-.service-item:hover .service-line {
-    width: 100%;
-    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-}
-
-/* Service Number */
+/* Service Number — hidden in card layout */
 .service-number {
-    flex-shrink: 0;
-    font-size: 3rem;
-    font-weight: 800;
-    color: rgba(0, 102, 204, 0.15);
-    line-height: 1;
-    transition: all var(--transition-normal);
-    font-family: var(--font-heading);
+    display: none;
 }
 
 /* Service Content */
 .service-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-header {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
 }
 
 .service-icon-wrapper {
-    font-size: 2.5rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-off-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1.5rem;
     color: var(--color-primary);
-    transition: transform var(--transition-normal);
+    transition: all var(--transition-normal);
+    flex-shrink: 0;
 }
 
 .service-item:hover .service-icon-wrapper {
-    transform: scale(1.1) rotate(5deg);
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: scale(1.05);
 }
 
 .service-title {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     margin: 0;
     transition: all var(--transition-fast);
 }
 
 .service-item:hover .service-title {
-    color: var(--color-white);
-    transform: translateX(5px);
+    color: var(--color-primary);
 }
 
 .service-description {
-    color: var(--color-text-dark);
-    line-height: 1.6;
+    color: #555555;
+    line-height: 1.7;
     margin-bottom: var(--spacing-md);
-    font-size: 1rem;
+    font-size: 0.95rem;
+    flex: 1;
 }
 
 .service-link {
@@ -139,9 +142,10 @@
     color: var(--color-primary);
     font-weight: 600;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: all var(--transition-fast);
     position: relative;
+    margin-top: auto;
 }
 
 .service-link::after {
@@ -150,7 +154,7 @@
     bottom: -2px;
     left: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background: var(--color-primary);
     transition: width var(--transition-normal);
 }
@@ -161,7 +165,7 @@
 
 .service-link:hover {
     gap: 0.75rem;
-    color: var(--color-primary-light);
+    color: var(--color-primary-dark);
 }
 
 .service-link svg {
@@ -172,111 +176,68 @@
     transform: translateX(5px);
 }
 
-/* Service Line */
+/* Service Line — hidden in card layout */
 .service-line {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 30%;
-    height: 1px;
-    background: rgba(0, 102, 204, 0.2);
-    transition: all var(--transition-normal);
+    display: none;
 }
 
-/* Dark mode adjustments */
-[data-theme="dark"] .interactive-services {
-    background: linear-gradient(180deg, transparent 0%, rgba(0, 102, 204, 0.05) 50%, transparent 100%);
-}
-
-[data-theme="dark"] .section-subtitle {
-    color: var(--color-text-light);
-}
-
-[data-theme="dark"] .service-number {
-    color: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .service-title {
-    color: var(--color-text-light);
-}
-
-[data-theme="dark"] .service-item:hover .service-title {
-    color: var(--color-primary-light);
-}
-
-[data-theme="dark"] .service-description {
-    color: var(--color-text-light);
-}
-
-[data-theme="dark"] .service-line {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
+/* Responsive: 2 columns on tablet */
+@media (max-width: 1024px) {
     .service-item {
-        flex-direction: column;
+        flex: 1 1 calc(50% - 1.5rem);
+    }
+}
+
+/* Responsive: 1 column on mobile */
+@media (max-width: 768px) {
+    .services-list {
         gap: var(--spacing-sm);
-        padding: var(--spacing-md) 0;
+    }
+
+    .service-item {
+        flex: 1 1 100%;
+        min-width: unset;
+        padding: var(--spacing-lg);
     }
 
     .service-item:hover {
-        transform: translateX(5px);
-    }
-
-    .service-number {
-        font-size: 2rem;
-        align-self: flex-start;
+        transform: translateY(-2px);
     }
 
     .service-header {
-        flex-direction: row;
-        align-items: center;
         gap: var(--spacing-sm);
     }
 
     .service-icon-wrapper {
-        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
     }
 
     .service-title {
-        font-size: 1.25rem;
-        color: var(--color-primary) !important;
-    }
-
-    /* Mobile tap effect - change to white */
-    .service-item:active .service-title {
-        color: #ffffff !important;
+        font-size: 1.125rem;
     }
 
     .service-description {
         font-size: 0.9375rem;
         line-height: 1.5;
-        color: var(--color-text-dark);
     }
 
     .service-link {
         font-size: 0.9375rem;
-        margin-top: var(--spacing-xs);
-    }
-
-    .service-line {
-        width: 50%;
     }
 }
 
 /* Extra small screens */
 @media (max-width: 480px) {
-    .service-number {
-        font-size: 1.75rem;
-    }
-
     .service-icon-wrapper {
-        font-size: 1.75rem;
+        width: 36px;
+        height: 36px;
+        font-size: 1.125rem;
     }
 
     .service-title {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 
     .service-description {

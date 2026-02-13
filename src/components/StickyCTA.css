@@ -7,13 +7,12 @@
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-teal) 100%);
+    background: linear-gradient(135deg, #333333 0%, #444444 100%);
     color: var(--color-white);
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
-    box-shadow: 0 8px 30px rgba(0, 102, 204, 0.4);
     transition: all var(--transition-normal);
     opacity: 0;
     transform: translateY(100px);
@@ -28,7 +27,7 @@
 
 .sticky-cta:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 40px rgba(0, 102, 204, 0.5);
+    background: linear-gradient(135deg, #1A1A1A 0%, #333333 100%);
 }
 
 .cta-icon {

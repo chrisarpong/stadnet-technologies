@@ -1,6 +1,6 @@
 /* ============================================
    KYNOVA - DESIGN SYSTEM
-   Blue & White Glassmorphism Theme
+   White & Grey Clean Theme
    ============================================ */
 
 @import './animations.css';
@@ -16,41 +16,41 @@
 
 /* === ROOT VARIABLES === */
 :root {
-  /* Primary Blue Palette */
-  --color-primary: #0066CC;
-  --color-primary-dark: #003d7a;
-  --color-primary-light: #3399FF;
-  --color-primary-lighter: #66B2FF;
+  /* Primary Neutral Palette */
+  --color-primary: #333333;
+  --color-primary-dark: #1A1A1A;
+  --color-primary-light: #555555;
+  --color-primary-lighter: #777777;
 
   /* Secondary & Accent Colors */
-  --color-secondary: #0099FF;
-  --color-accent: #00CCFF;
-  --color-teal: #00A896;
-  --color-teal-light: #02C39A;
-  --color-cyan: #05D9E8;
+  --color-secondary: #444444;
+  --color-accent: #666666;
+  --color-teal: #555555;
+  --color-teal-light: #666666;
+  --color-cyan: #777777;
 
   /* White & Light Shades */
   --color-white: #FFFFFF;
-  --color-off-white: #F8F9FA;
-  --color-light-gray: #E8EEF5;
-  --color-light-blue-bg: #F0F7FF;
-  --color-medium-gray: #C5D3E0;
+  --color-off-white: #F5F6F8;
+  --color-light-gray: #E5E5E5;
+  --color-light-blue-bg: #F5F6F8;
+  --color-medium-gray: #999999;
 
   /* Dark Shades */
-  --color-dark: #1A1A2E;
-  --color-dark-blue: #16213E;
-  --color-text-dark: #2C3E50;
+  --color-dark: #1A1A1A;
+  --color-dark-blue: #2C2C2C;
+  --color-text-dark: #333333;
 
-  /* Enhanced Glassmorphism Variables */
-  --glass-bg: rgba(255, 255, 255, 0.12);
-  --glass-bg-light: rgba(255, 255, 255, 0.20);
-  --glass-bg-medium: rgba(255, 255, 255, 0.30);
-  --glass-bg-dark: rgba(0, 102, 204, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.35);
-  --glass-border-strong: rgba(255, 255, 255, 0.5);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
-  --glass-shadow-hover: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
-  --glass-shadow-strong: 0 15px 50px 0 rgba(0, 102, 204, 0.2);
+  /* Clean card variables (no glassmorphism) */
+  --glass-bg: #FFFFFF;
+  --glass-bg-light: #FAFAFA;
+  --glass-bg-medium: #F5F5F5;
+  --glass-bg-dark: #F0F0F0;
+  --glass-border: #E5E5E5;
+  --glass-border-strong: #D0D0D0;
+  --glass-shadow: none;
+  --glass-shadow-hover: none;
+  --glass-shadow-strong: none;
 
   /* Typography */
   --font-heading: 'Montserrat', sans-serif;
@@ -152,49 +152,36 @@ a:hover {
   color: var(--color-primary-light);
 }
 
-/* === GLASSMORPHISM UTILITIES === */
+/* === CLEAN CARD UTILITIES (replacing glassmorphism) === */
 .glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  background: var(--color-white);
+  border: none;
   border-radius: var(--radius-lg);
   transition: all var(--transition-normal);
 }
 
 .glass:hover {
   background: var(--glass-bg-light);
-  box-shadow: var(--glass-shadow-hover);
   transform: translateY(-2px);
 }
 
 .glass-light {
   background: var(--glass-bg-light);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  border: none;
   border-radius: var(--radius-md);
 }
 
 .glass-dark {
   background: var(--glass-bg-dark);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(0, 102, 204, 0.2);
-  box-shadow: var(--glass-shadow);
+  border: none;
   border-radius: var(--radius-lg);
 }
 
 .glass-card {
-  background: var(--glass-bg-light);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border-strong);
+  background: var(--color-white);
+  border: none;
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
-  box-shadow: var(--glass-shadow-strong);
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
@@ -207,13 +194,11 @@ a:hover {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, var(--glass-border-strong) 50%, transparent 100%);
 }
 
 .glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 50px 0 rgba(0, 102, 204, 0.25);
-  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-4px);
 }
 
 /* === BUTTONS === */
@@ -233,22 +218,19 @@ a:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background: var(--color-primary);
   color: var(--color-white);
-  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
-  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+  background: var(--color-primary-dark);
   transform: translateY(-2px);
   color: var(--color-white);
 }
 
 .btn-secondary {
-  background: var(--glass-bg-light);
-  backdrop-filter: blur(10px);
-  color: var(--color-primary-dark);
+  background: var(--color-white);
+  color: var(--color-primary);
   border: 2px solid var(--color-primary);
 }
 
@@ -281,7 +263,7 @@ a:hover {
 }
 
 .section-alt {
-  background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(0, 153, 255, 0.05) 100%);
+  background: var(--color-off-white);
 }
 
 /* === GRID SYSTEM === */
@@ -362,7 +344,7 @@ a:hover {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: linear-gradient(135deg, #1A1A1A 0%, #333333 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -484,7 +466,7 @@ a:hover {
 .floating-shape {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.15;
+  opacity: 0.08;
   pointer-events: none;
   z-index: 0;
 }
@@ -492,7 +474,7 @@ a:hover {
 .floating-shape-1 {
   width: 300px;
   height: 300px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-teal));
+  background: linear-gradient(135deg, #999, #BBB);
   top: 10%;
   right: -100px;
   animation: float 15s ease-in-out infinite;
@@ -501,7 +483,7 @@ a:hover {
 .floating-shape-2 {
   width: 200px;
   height: 200px;
-  background: linear-gradient(135deg, var(--color-secondary), var(--color-cyan));
+  background: linear-gradient(135deg, #AAA, #CCC);
   bottom: 20%;
   left: -50px;
   animation: floatSlow 12s ease-in-out infinite;
@@ -511,7 +493,7 @@ a:hover {
 .floating-shape-3 {
   width: 150px;
   height: 150px;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-primary-light));
+  background: linear-gradient(135deg, #BBB, #DDD);
   top: 60%;
   right: 10%;
   animation: float 18s ease-in-out infinite;

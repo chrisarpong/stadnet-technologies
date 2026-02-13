@@ -92,12 +92,11 @@
 
 /* Hover lift effect */
 .hover-lift {
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    transition: transform var(--transition-normal);
 }
 
 .hover-lift:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 102, 204, 0.2);
 }
 
 /* Pulse animation for CTAs */

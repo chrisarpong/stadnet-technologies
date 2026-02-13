@@ -6,9 +6,8 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(135deg, #0066CC 0%, #004C99 50%, #003366 100%);
+    background: linear-gradient(135deg, #333333 0%, #444444 50%, #2C2C2C 100%);
     padding-top: 80px;
-    /* Account for navbar height */
 }
 
 /* Parallax background with gradient orbs */
@@ -26,14 +25,14 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    opacity: 0.3;
+    opacity: 0.2;
     animation: float 20s ease-in-out infinite;
 }
 
 .orb-1 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, #66B2FF 0%, transparent 70%);
+    background: radial-gradient(circle, #888888 0%, transparent 70%);
     top: -100px;
     left: -100px;
     animation-delay: 0s;
@@ -42,7 +41,7 @@
 .orb-2 {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, #0099FF 0%, transparent 70%);
+    background: radial-gradient(circle, #777777 0%, transparent 70%);
     bottom: -50px;
     right: -50px;
     animation-delay: 5s;
@@ -51,7 +50,7 @@
 .orb-3 {
     width: 350px;
     height: 350px;
-    background: radial-gradient(circle, #00CCFF 0%, transparent 70%);
+    background: radial-gradient(circle, #999999 0%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -87,7 +86,7 @@
 
 .shape {
     position: absolute;
-    opacity: 0.1;
+    opacity: 0.08;
     will-change: transform;
 }
 
@@ -169,7 +168,6 @@
     color: var(--color-white);
     margin-bottom: var(--spacing-md);
     line-height: 1.1;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
@@ -177,7 +175,6 @@
     color: #ffffff !important;
     margin-bottom: var(--spacing-xl);
     line-height: 1.6;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-cta {
@@ -186,19 +183,18 @@
     gap: 0.5rem;
     padding: 1rem 2.5rem;
     background: var(--color-white);
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     font-weight: 600;
     font-size: 1.125rem;
-    border-radius: var(--radius-full);
+    border-radius: 50px;
     text-decoration: none;
     transition: all var(--transition-normal);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .hero-cta:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     gap: 0.75rem;
+    background: var(--color-off-white);
 }
 
 .hero-cta svg {
@@ -211,17 +207,14 @@
 
 /* Right side - Image box */
 .hero-image-box {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 2px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .image-placeholder {
@@ -265,22 +258,18 @@
         min-height: auto;
         padding: var(--spacing-2xl) 0;
         padding-top: 180px !important;
-        /* Ensure main container has padding */
         display: block;
-        /* Remove flex centering constraint on mobile */
     }
 
     .hero-split-layout {
         gap: var(--spacing-sm);
         margin-top: 2rem;
-        /* Add specific margin to content */
     }
 
     .hero-title {
         font-size: clamp(1.75rem, 8vw, 2.25rem);
         color: #ffffff !important;
         margin-top: 1rem;
-        /* Ensure title is pushed down */
     }
 
     .hero-subtitle {

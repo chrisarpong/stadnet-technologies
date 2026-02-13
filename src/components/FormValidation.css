@@ -66,7 +66,6 @@
 .form-group select:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
 }
 
 /* Loading state for submit button */

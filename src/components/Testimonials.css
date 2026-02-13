@@ -1,6 +1,6 @@
 .testimonials-section {
     padding: var(--spacing-3xl) 0;
-    background: var(--color-light-blue-bg);
+    background: var(--color-off-white);
 }
 
 .testimonials-grid {
@@ -11,17 +11,16 @@
     background: var(--color-white);
     border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
-    box-shadow: 0 4px 20px rgba(0, 102, 204, 0.08);
     transition: all var(--transition-normal);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
-    border: 1px solid var(--color-light-gray);
+    border: none;
 }
 
 .testimonial-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 102, 204, 0.15);
+    transform: translateY(-4px);
+    background: #F8F8F8;
 }
 
 .stars-rating {

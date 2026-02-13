@@ -44,7 +44,7 @@
     background: white;
     border-radius: 50%;
     transition: all var(--transition-normal);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
 }
 
 .theme-toggle input:checked+.toggle-slider {
@@ -53,10 +53,6 @@
 
 .theme-toggle input:checked+.toggle-slider:before {
     transform: translateX(24px);
-}
-
-.theme-toggle:hover .toggle-slider {
-    box-shadow: 0 0 8px rgba(0, 102, 204, 0.3);
 }
 
 /* Dark mode adjustments */

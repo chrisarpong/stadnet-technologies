@@ -4,10 +4,24 @@
     overflow-x: hidden;
 }
 
-.services-section {
-    padding: var(--spacing-3xl) 0;
+/* === HOME PAGE SECTION SPACING === */
+.home-page .services-section {
+    padding: 100px 0;
 }
 
+.home-page .testimonials-section {
+    padding: 100px 0;
+}
+
+.home-page .cta-section {
+    padding: 100px 0;
+}
+
+.home-page .interactive-service-cards {
+    padding: 100px 0;
+}
+
+/* Section Headers */
 .section-header {
     max-width: 800px;
     margin: 0 auto var(--spacing-2xl);
@@ -16,6 +30,7 @@
 .section-header h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: var(--spacing-md);
+    color: var(--color-primary-dark);
 }
 
 .section-subtitle {
@@ -25,16 +40,20 @@
     line-height: 1.6;
 }
 
+/* === CTA SECTION === */
 .cta-section {
-    padding: var(--spacing-2xl) 0;
+    padding: 100px 0;
+    background: var(--color-off-white);
 }
 
 .cta-content {
     padding: var(--spacing-3xl) var(--spacing-2xl);
+    text-align: center;
 }
 
 .cta-content h2 {
     color: var(--color-primary-dark);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     margin-bottom: var(--spacing-md);
 }
 
@@ -45,6 +64,7 @@
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.7;
 }
 
 .cta-buttons {
@@ -56,6 +76,14 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+
+    .home-page .services-section,
+    .home-page .testimonials-section,
+    .home-page .cta-section,
+    .home-page .interactive-service-cards {
+        padding: 60px 0;
+    }
+
     .cta-content {
         padding: var(--spacing-2xl) var(--spacing-md);
     }
