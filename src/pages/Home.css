@@ -40,64 +40,12 @@
     line-height: 1.6;
 }
 
-/* === CTA SECTION === */
-.cta-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #ffffff 0%, var(--color-off-white) 50%, #ffffff 100%);
-}
-
-.cta-content {
-    padding: var(--spacing-3xl) var(--spacing-2xl);
-    text-align: center;
-    background: var(--color-white);
-    /*border-radius: var(--radius-xl);*/
-    box-shadow: 0 4px 30px rgba(0, 102, 255, 0.06);
-}
-
-.cta-content h2 {
-    color: var(--color-primary-dark);
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    margin-bottom: var(--spacing-md);
-}
-
-.cta-content p {
-    font-size: 1.125rem;
-    color: var(--color-text-dark);
-    margin-bottom: var(--spacing-xl);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.7;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: var(--spacing-md);
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
 
     .home-page .services-section,
     .home-page .testimonials-section,
-    .home-page .cta-section,
     .home-page .interactive-service-cards {
         padding: 60px 0;
-    }
-
-    .cta-content {
-        padding: var(--spacing-2xl) var(--spacing-md);
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cta-buttons .btn {
-        width: 100%;
-        max-width: 300px;
     }
 }

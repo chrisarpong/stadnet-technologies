@@ -238,6 +238,20 @@ const Contact = () => {
                     </div>
                 </div>
             </section>
+            <section className="section section-white cta-section">
+                <div className="container-narrow">
+                    <div className="cta-content glass-card text-center" data-aos="zoom-in">
+                        <h2>Ready to Transform Your Business?</h2>
+                        <p>
+                            Let's discuss how KYNOVA can help you achieve your digital goals
+                            with our innovative solutions and expert team.
+                        </p>
+                        <div className="cta-buttons">
+                            <a href="/solutions" className="btn btn-primary btn-large">Explore Services</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };
