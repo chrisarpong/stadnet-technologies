@@ -39,8 +39,16 @@ const Engineering = () => {
         }
     ];
 
+    const breadcrumbItems = [
+        { label: 'Home', path: '/' },
+        { label: 'Solutions', path: '/solutions' },
+        { label: 'Engineering & Digitization', path: '/engineering' }
+    ];
+
     return (
         <div className="service-page">
+            <Breadcrumb items={breadcrumbItems} />
+
             <Hero
                 title="Engineering & Digitization"
                 subtitle="Modernize your technology infrastructure for the digital age"

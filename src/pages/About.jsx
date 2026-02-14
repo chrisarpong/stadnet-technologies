@@ -1,5 +1,6 @@
 import Hero from '../components/Hero';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';
+import Breadcrumb from '../components/Breadcrumb';
 import { FaLightbulb, FaHandshake, FaRocket, FaUsers, FaShieldAlt, FaLeaf } from 'react-icons/fa';
 import './About.css';
 
@@ -43,8 +44,15 @@ const About = () => {
         }
     ];
 
+    const breadcrumbItems = [
+        { label: 'Home', path: '/' },
+        { label: 'About', path: '/about' }
+    ];
+
     return (
         <div className="about-page">
+            <Breadcrumb items={breadcrumbItems} />
+
             <Hero
                 title="About KYNOVA"
                 subtitle="Building the future of digital technology, one solution at a time."

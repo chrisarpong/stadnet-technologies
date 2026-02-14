@@ -39,8 +39,16 @@ const ProductDesign = () => {
         }
     ];
 
+    const breadcrumbItems = [
+        { label: 'Home', path: '/' },
+        { label: 'Solutions', path: '/solutions' },
+        { label: 'Product Design', path: '/product-design' }
+    ];
+
     return (
         <div className="service-page">
+            <Breadcrumb items={breadcrumbItems} />
+
             <Hero
                 title="Product Design"
                 subtitle="Design digital products that users love and businesses thrive on"

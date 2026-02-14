@@ -1,5 +1,6 @@
 import Hero from '../components/Hero';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';
+import Breadcrumb from '../components/Breadcrumb';
 import { FaLaptopCode, FaPaintBrush, FaCloud, FaServer, FaBullhorn, FaTasks } from 'react-icons/fa';
 import './Careers.css';
 
@@ -49,8 +50,15 @@ const Careers = () => {
         }
     ];
 
+    const breadcrumbItems = [
+        { label: 'Home', path: '/' },
+        { label: 'Careers', path: '/careers' }
+    ];
+
     return (
         <div className="careers-page">
+            <Breadcrumb items={breadcrumbItems} />
+
             <Hero
                 title="Join Our Team"
                 subtitle="Be part of an innovative team shaping the future of technology"

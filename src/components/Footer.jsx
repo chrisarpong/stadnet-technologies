@@ -16,7 +16,7 @@ const Footer = () => {
                                     <path d="M10 10C11.3807 10 12.5 8.88071 12.5 7.5C12.5 6.11929 11.3807 5 10 5C8.61929 5 7.5 6.11929 7.5 7.5C7.5 8.88071 8.61929 10 10 10Z" stroke="currentColor" strokeWidth="1.5" />
                                     <path d="M10 17.5C13.75 14.1667 17.5 11.3214 17.5 7.5C17.5 3.63401 14.1421 1 10 1C5.85786 1 2.5 3.63401 2.5 7.5C2.5 11.3214 6.25 14.1667 10 17.5Z" stroke="currentColor" strokeWidth="1.5" />
                                 </svg>
-                                <span>123 Tech Street, Innovation District<br />Accra, Ghana</span>
+                                <span>Ministry of Foreign Affairs<br />No. 1 Revenue Close, Off Liberation Road<br />Accra, Ghana</span>
                             </p>
                             <p className="contact-item">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -52,6 +52,7 @@ const Footer = () => {
                             specializing in mobile & web development, cloud computing, design services,
                             and digital transformation consulting.
                         </p>
+                        {/* TODO: Update social media links below with real KYNOVA account URLs */}
                         <div className="footer-social">
                             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -75,6 +76,7 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <p>&copy; {currentYear} KYNOVA. All rights reserved.</p>
                     <div className="footer-legal">
+                        {/* TODO: Create actual Privacy Policy (/privacy) and Terms of Service (/terms) pages — these currently lead to 404 */}
                         <a href="/privacy">Privacy Policy</a>
                         <span>•</span>
                         <a href="/terms">Terms of Service</a>

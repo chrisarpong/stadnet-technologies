@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from 'framer-motion';
@@ -10,45 +11,54 @@ import CookieBanner from './components/CookieBanner';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import ScrollToTop from './components/ScrollToTop';
 import ScrollToTopOnMount from './components/ScrollToTopOnMount';
-import Home from './pages/Home';
-import Solutions from './pages/Solutions';
-import MobileWebDev from './pages/MobileWebDev';
-import CloudComputing from './pages/CloudComputing';
-import GraphicDesign from './pages/GraphicDesign';
-import ProductDesign from './pages/ProductDesign';
-import Consulting from './pages/Consulting';
-import Engineering from './pages/Engineering';
-import Careers from './pages/Careers';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import NotFound from './pages/NotFound';
+import LoadingSpinner from './components/LoadingSpinner';
+
+// Lazy-loaded pages — each page is split into its own chunk for faster initial load
+const Home = lazy(() => import('./pages/Home'));
+const Solutions = lazy(() => import('./pages/Solutions'));
+const MobileWebDev = lazy(() => import('./pages/MobileWebDev'));
+const CloudComputing = lazy(() => import('./pages/CloudComputing'));
+const GraphicDesign = lazy(() => import('./pages/GraphicDesign'));
+const ProductDesign = lazy(() => import('./pages/ProductDesign'));
+const Consulting = lazy(() => import('./pages/Consulting'));
+const Engineering = lazy(() => import('./pages/Engineering'));
+const Careers = lazy(() => import('./pages/Careers'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 const AnimatedRoutes = () => {
     const location = useLocation();
 
     return (
-        <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<PageTransition><Home /></PageTransition>} />
-                <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-                <Route path="/solutions" element={<PageTransition><Solutions /></PageTransition>} />
-                <Route path="/mobile-web-development" element={<PageTransition><MobileWebDev /></PageTransition>} />
-                <Route path="/cloud-computing" element={<PageTransition><CloudComputing /></PageTransition>} />
-                <Route path="/graphic-design" element={<PageTransition><GraphicDesign /></PageTransition>} />
-                <Route path="/product-design" element={<PageTransition><ProductDesign /></PageTransition>} />
-                <Route path="/consulting" element={<PageTransition><Consulting /></PageTransition>} />
-                <Route path="/engineering" element={<PageTransition><Engineering /></PageTransition>} />
-                <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
-                <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
-                <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
-            </Routes>
-        </AnimatePresence>
+        <Suspense fallback={
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
+                <LoadingSpinner size="large" />
+            </div>
+        }>
+            <AnimatePresence mode="wait">
+                <Routes location={location} key={location.pathname}>
+                    <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+                    <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+                    <Route path="/solutions" element={<PageTransition><Solutions /></PageTransition>} />
+                    <Route path="/mobile-web-development" element={<PageTransition><MobileWebDev /></PageTransition>} />
+                    <Route path="/cloud-computing" element={<PageTransition><CloudComputing /></PageTransition>} />
+                    <Route path="/graphic-design" element={<PageTransition><GraphicDesign /></PageTransition>} />
+                    <Route path="/product-design" element={<PageTransition><ProductDesign /></PageTransition>} />
+                    <Route path="/consulting" element={<PageTransition><Consulting /></PageTransition>} />
+                    <Route path="/engineering" element={<PageTransition><Engineering /></PageTransition>} />
+                    <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
+                    <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+                    <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+                </Routes>
+            </AnimatePresence>
+        </Suspense>
     );
 };
 
 function App() {
-    // Replace with your actual Google Analytics Measurement ID
-    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // User needs to replace this
+    // TODO: Replace with your actual Google Analytics Measurement ID (get from https://analytics.google.com)
+    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
 
     return (
         <HelmetProvider>
@@ -56,6 +66,8 @@ function App() {
                 <ErrorBoundary>
                     <Router>
                         <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
+                        <ScrollToTopOnMount />
+                        {/* TODO: Add Dark Mode toggle — DarkModeToggle.jsx and ThemeToggle.jsx components already exist, just need to render one here or in the Navbar */}
 
                         <div className="app">
                             <Navbar />

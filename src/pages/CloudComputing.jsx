@@ -39,8 +39,16 @@ const CloudComputing = () => {
         }
     ];
 
+    const breadcrumbItems = [
+        { label: 'Home', path: '/' },
+        { label: 'Solutions', path: '/solutions' },
+        { label: 'Cloud Computing', path: '/cloud-computing' }
+    ];
+
     return (
         <div className="service-page">
+            <Breadcrumb items={breadcrumbItems} />
+
             <Hero
                 title="Cloud Computing Solutions"
                 subtitle="Harness the power of cloud technology for scalability and innovation"

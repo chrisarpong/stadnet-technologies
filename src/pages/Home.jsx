@@ -1,3 +1,16 @@
+/**
+ * Home Page
+ *
+ * TODO: Future Improvements
+ * -------------------------
+ * 1. FAQ Component — FAQ.jsx already exists, add it to this page or Contact page for common questions
+ * 2. Blog/Insights Page — Create a blog page for tech articles, case studies, and industry news (great for SEO)
+ * 3. Portfolio/Case Studies — Showcase completed projects to build credibility with potential clients
+ * 4. WhatsApp Integration — Add a floating WhatsApp chat button for instant client communication (common in Ghana)
+ * 5. Scroll-Triggered Animations — Add AOS (Animate On Scroll) library or Intersection Observer for section animations
+ * 6. Open Graph Images — Add og:image meta tags for proper social media previews on WhatsApp, LinkedIn, Twitter
+ */
+
 import SEO from '../components/SEO';
 import ParallaxHero from '../components/ParallaxHero';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';

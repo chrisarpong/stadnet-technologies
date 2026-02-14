@@ -39,8 +39,16 @@ const Consulting = () => {
         }
     ];
 
+    const breadcrumbItems = [
+        { label: 'Home', path: '/' },
+        { label: 'Solutions', path: '/solutions' },
+        { label: 'Consulting', path: '/consulting' }
+    ];
+
     return (
         <div className="service-page">
+            <Breadcrumb items={breadcrumbItems} />
+
             <Hero
                 title="IT Consulting Services"
                 subtitle="Strategic guidance to navigate your digital transformation"

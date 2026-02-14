@@ -6,6 +6,11 @@ const ParallaxHero = ({ title, subtitle, ctaText, ctaLink }) => {
     const shapesRef = useRef([]);
 
     useEffect(() => {
+        // Disable parallax on mobile — the scroll handler fights native
+        // touch scrolling and makes it difficult/impossible to scroll
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (isMobile) return;
+
         const handleScroll = () => {
             const scrolled = window.scrollY;
             const hero = heroRef.current;
@@ -24,7 +29,7 @@ const ParallaxHero = ({ title, subtitle, ctaText, ctaLink }) => {
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 

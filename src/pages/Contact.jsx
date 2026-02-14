@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import SEO from '../components/SEO';
 import Hero from '../components/Hero';
+import Breadcrumb from '../components/Breadcrumb';
 import './Contact.css';
 
 const Contact = () => {
@@ -70,8 +71,15 @@ const Contact = () => {
         }
     };
 
+    const breadcrumbItems = [
+        { label: 'Home', path: '/' },
+        { label: 'Contact', path: '/contact' }
+    ];
+
     return (
         <div className="contact-page">
+            <Breadcrumb items={breadcrumbItems} />
+
             <SEO
                 title="Contact Us"
                 description="Get in touch with KYNOVA. We're here to help with your IT and digital transformation needs."
@@ -99,7 +107,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h5>Our Office</h5>
-                                        <p>123 Tech Street, Innovation District<br />Accra, Ghana</p>
+                                        <p>Ministry of Foreign Affairs<br />No. 1 Revenue Close, Off Liberation Road<br />Accra, Ghana</p>
                                     </div>
                                 </div>
 
@@ -249,6 +257,25 @@ const Contact = () => {
                         <div className="cta-buttons">
                             <a href="/solutions" className="btn btn-primary btn-large">Explore Services</a>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Google Maps Embed */}
+            <section className="section section-map">
+                <div className="container">
+                    <h2 className="section-title text-center mb-lg">Find Us</h2>
+                    <div className="contact-map">
+                        <iframe
+                            title="KYNOVA Office Location"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.9975682851644!2d-0.17424068523755!3d5.573215995943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9a7b0e8b0f55%3A0x2bce99e2e4c0e0a9!2sMinistry%20of%20Foreign%20Affairs%20%26%20Regional%20Integration!5e0!3m2!1sen!2sgh!4v1707868800000!5m2!1sen!2sgh"
+                            width="100%"
+                            height="450"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
                     </div>
                 </div>
             </section>

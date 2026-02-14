@@ -39,8 +39,16 @@ const GraphicDesign = () => {
         }
     ];
 
+    const breadcrumbItems = [
+        { label: 'Home', path: '/' },
+        { label: 'Solutions', path: '/solutions' },
+        { label: 'Graphic Design', path: '/graphic-design' }
+    ];
+
     return (
         <div className="service-page">
+            <Breadcrumb items={breadcrumbItems} />
+
             <Hero
                 title="Graphic Design Services"
                 subtitle="Visual storytelling that captures attention and inspires action"

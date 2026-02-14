@@ -1,5 +1,6 @@
 import Hero from '../components/Hero';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';
+import Breadcrumb from '../components/Breadcrumb';
 import { FaMobileAlt, FaCloud, FaPencilRuler, FaLayerGroup, FaHandshake, FaCogs } from 'react-icons/fa';
 
 const Solutions = () => {
@@ -42,8 +43,15 @@ const Solutions = () => {
         }
     ];
 
+    const breadcrumbItems = [
+        { label: 'Home', path: '/' },
+        { label: 'Solutions', path: '/solutions' }
+    ];
+
     return (
         <div className="solutions-page">
+            <Breadcrumb items={breadcrumbItems} />
+
             <Hero
                 title="Our Solutions"
                 subtitle="Comprehensive IT services tailored to your business needs"

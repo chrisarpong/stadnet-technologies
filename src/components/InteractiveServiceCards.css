@@ -191,18 +191,27 @@
 @media (max-width: 768px) {
     .services-list {
         gap: var(--spacing-md);
+        padding: 0 var(--spacing-xs);
     }
 
     .service-item {
         flex: 1 1 100%;
         min-width: unset;
         padding: var(--spacing-lg);
-        background: #F5F5F5;
-        /* Mobile: Show grey background by default */
+        background: #F8F9FB;
+        border-radius: var(--radius-lg);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .service-item:hover {
         transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .service-item:active {
+        transform: scale(0.98);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
     }
 
     .service-header {
@@ -210,9 +219,10 @@
     }
 
     .service-icon-wrapper {
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
         font-size: 1.25rem;
+        border-radius: var(--radius-md);
     }
 
     .service-title {
@@ -221,11 +231,12 @@
 
     .service-description {
         font-size: 0.9375rem;
-        line-height: 1.5;
+        line-height: 1.6;
     }
 
     .service-link {
         font-size: 0.9375rem;
+        padding: 0.25rem 0;
     }
 }
 
