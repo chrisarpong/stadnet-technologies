@@ -21,6 +21,18 @@
     box-shadow: var(--glass-shadow);
 }
 
+.navbar-scrolled .nav-link {
+    color: var(--color-text-dark);
+}
+
+.navbar-scrolled .logo-text-brand {
+    color: var(--color-primary-dark) !important;
+}
+
+.navbar-scrolled .mobile-menu-toggle span {
+    background: var(--color-primary-dark);
+}
+
 .navbar-content {
     display: flex;
     justify-content: space-between;
@@ -115,7 +127,8 @@
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 0.95rem;
-    color: var(--color-text-dark);
+    color: #FFFFFF;
+    /* White text for header/navbar */
     text-decoration: none;
     padding: 0.5rem 0;
     transition: color var(--transition-fast);
