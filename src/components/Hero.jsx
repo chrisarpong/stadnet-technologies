@@ -21,11 +21,7 @@ const Hero = ({
                 <div className="hero-content animate-fadeInUp">
                     <h1 className="hero-title">{title}</h1>
                     {subtitle && <p className="hero-subtitle">{subtitle}</p>}
-                    {ctaText && ctaLink && (
-                        <a href={ctaLink} className="btn btn-primary btn-large hero-cta">
-                            {ctaText}
-                        </a>
-                    )}
+
                 </div>
             </div>
         </section>
