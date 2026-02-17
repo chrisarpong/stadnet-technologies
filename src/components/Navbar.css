@@ -105,9 +105,15 @@
     display: block;
     width: 25px;
     height: 3px;
-    background: var(--color-primary-dark);
+    background: #FFFFFF;
+    /* White hamburger by default */
     border-radius: 2px;
     transition: all var(--transition-fast);
+}
+
+.mobile-menu-toggle.active span {
+    background: var(--color-primary-dark);
+    /* Dark when menu is open */
 }
 
 .navbar-menu {
@@ -320,6 +326,8 @@
         padding: 1.1rem 0.75rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         font-size: 1rem;
+        color: var(--color-text-dark);
+        /* Force dark text in mobile menu */
         transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
