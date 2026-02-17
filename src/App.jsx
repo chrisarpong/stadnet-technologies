@@ -15,11 +15,9 @@ import LoadingSpinner from './components/LoadingSpinner';
 
 // Lazy-loaded pages — each page is split into its own chunk for faster initial load
 const Home = lazy(() => import('./pages/Home'));
-const Solutions = lazy(() => import('./pages/Solutions'));
+const Services = lazy(() => import('./pages/Services'));
 const MobileWebDev = lazy(() => import('./pages/MobileWebDev'));
 const CloudComputing = lazy(() => import('./pages/CloudComputing'));
-const GraphicDesign = lazy(() => import('./pages/GraphicDesign'));
-const ProductDesign = lazy(() => import('./pages/ProductDesign'));
 const Consulting = lazy(() => import('./pages/Consulting'));
 const Engineering = lazy(() => import('./pages/Engineering'));
 const Careers = lazy(() => import('./pages/Careers'));
@@ -40,11 +38,9 @@ const AnimatedRoutes = () => {
                 <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<PageTransition><Home /></PageTransition>} />
                     <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-                    <Route path="/solutions" element={<PageTransition><Solutions /></PageTransition>} />
+                    <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
                     <Route path="/mobile-web-development" element={<PageTransition><MobileWebDev /></PageTransition>} />
                     <Route path="/cloud-computing" element={<PageTransition><CloudComputing /></PageTransition>} />
-                    <Route path="/graphic-design" element={<PageTransition><GraphicDesign /></PageTransition>} />
-                    <Route path="/product-design" element={<PageTransition><ProductDesign /></PageTransition>} />
                     <Route path="/consulting" element={<PageTransition><Consulting /></PageTransition>} />
                     <Route path="/engineering" element={<PageTransition><Engineering /></PageTransition>} />
                     <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />

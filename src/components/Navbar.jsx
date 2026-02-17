@@ -86,36 +86,7 @@ const Navbar = () => {
                     <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
                         <Link to="/" className="nav-link">Home</Link>
                         <Link to="/about" className="nav-link">About</Link>
-                        <Link to="/solutions" className="nav-link">Solutions</Link>
-
-                        <div className={`nav-dropdown ${activeDropdown === 'services' ? 'active' : ''}`}>
-                            <button
-                                className="nav-link dropdown-toggle"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    toggleDropdown('services');
-                                }}
-                            >
-                                <span style={{ pointerEvents: 'none' }}>Services</span>
-                                <svg className="dropdown-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                                    <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                                </svg>
-                            </button>
-                            <div className={`dropdown-menu ${activeDropdown === 'services' ? 'active' : ''}`}>
-                                {services.map((service) => (
-                                    <Link
-                                        key={service.path}
-                                        to={service.path}
-                                        className="dropdown-item"
-                                    >
-                                        {service.icon}
-                                        <span>{service.name}</span>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-
+                        <Link to="/services" className="nav-link">Services</Link>
                         <Link to="/careers" className="nav-link">Careers</Link>
                         <Link to="/contact" className="nav-link nav-link-primary">Contact</Link>
                     </div>

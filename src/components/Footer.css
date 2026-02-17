@@ -133,10 +133,10 @@
 }
 
 .footer-social a:hover {
-    background: rgba(255, 255, 255, 0.18);
+    background: var(--glass-bg-light);
     color: #FFFFFF;
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--glass-shadow-hover);
 }
 
 .footer-bottom {
