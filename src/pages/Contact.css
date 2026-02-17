@@ -21,12 +21,13 @@
 .contact-option-card {
     padding: var(--spacing-xl);
     text-align: center;
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.05);
+    /* Blend with background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-lg);
-    box-shadow: var(--glass-shadow);
+    box-shadow: none;
     transition: all var(--transition-normal);
     display: flex;
     flex-direction: column;
@@ -36,9 +37,10 @@
 
 .contact-option-card:hover {
     transform: translateY(-5px);
-    background: var(--glass-bg-light);
-    border-color: var(--glass-border-strong);
-    box-shadow: var(--glass-shadow-hover);
+    background: rgba(128, 128, 128, 0.15);
+    /* Greyish hover */
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .icon-wrapper {
@@ -57,6 +59,12 @@
     font-size: 1.5rem;
     margin-bottom: var(--spacing-md);
     color: var(--color-primary-dark);
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
+    min-height: 500px;
 }
 
 .contact-details {
@@ -97,12 +105,19 @@
     max-width: 800px;
     margin: 0 auto;
     padding: var(--spacing-2xl);
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.05);
+    /* Blend with background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-lg);
-    box-shadow: var(--glass-shadow);
+    box-shadow: none;
+    transition: all var(--transition-normal);
+}
+
+.form-wrapper:hover {
+    background: rgba(128, 128, 128, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .contact-form {

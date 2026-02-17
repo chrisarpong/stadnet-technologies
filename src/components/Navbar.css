@@ -52,7 +52,7 @@
 }
 
 .logo-text-brand {
-    color: var(--color-primary-dark) !important;
+    color: #FFFFFF !important;
     font-weight: 700;
     font-size: 1.25rem;
     font-family: var(--font-heading);
@@ -139,7 +139,7 @@
 }
 
 .nav-link:hover {
-    color: var(--color-primary-light);
+    color: var(--color-accent-light);
 }
 
 .nav-link:hover::after {
