@@ -51,7 +51,7 @@ const Navbar = () => {
         { name: 'Mobile & Web Development', path: '/mobile-web-development', icon: <FaMobileAlt /> },
         { name: 'Cloud Computing', path: '/cloud-computing', icon: <FaCloud /> },
         { name: 'Graphic Design', path: '/graphic-design', icon: <FaPencilRuler /> },
-        { name: 'Product Design', path: '/product-design', icon: <FaLayerGroup /> },
+
         { name: 'Consulting', path: '/consulting', icon: <FaHandshake /> },
         { name: 'Engineering & Digitization', path: '/engineering', icon: <FaCogs /> },
     ];
