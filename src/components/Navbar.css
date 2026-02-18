@@ -193,14 +193,7 @@
     gap: 0.25rem;
 }
 
-.dropdown-icon {
-    transition: transform var(--transition-fast);
-}
 
-.nav-dropdown:hover .dropdown-icon,
-.dropdown-menu.active~.dropdown-toggle .dropdown-icon {
-    transform: rotate(180deg);
-}
 
 .dropdown-menu {
     position: absolute;
