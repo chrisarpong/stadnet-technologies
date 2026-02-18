@@ -14,7 +14,7 @@
 import SEO from '../components/SEO';
 import ParallaxHero from '../components/ParallaxHero';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';
-import Testimonials from '../components/Testimonials';
+
 import './Home.css';
 
 const Home = () => {
@@ -114,8 +114,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Testimonials Section */}
-            <Testimonials />
+
 
 
         </div>
