@@ -13,24 +13,25 @@
 }
 
 .navbar-scrolled {
-    background: var(--glass-bg-light);
+    background: rgba(26, 26, 46, 0.95);
+    /* Dark background matching Hero theme */
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 0.75rem 0;
-    box-shadow: var(--glass-shadow);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-scrolled .nav-link {
-    color: var(--color-text-dark);
+    color: #FFFFFF;
 }
 
 .navbar-scrolled .logo-text-brand {
-    color: var(--color-primary-dark) !important;
+    color: #FFFFFF !important;
 }
 
 .navbar-scrolled .mobile-menu-toggle span {
-    background: var(--color-primary-dark);
+    background: #FFFFFF;
 }
 
 .navbar-content {
