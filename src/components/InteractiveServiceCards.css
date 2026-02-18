@@ -114,6 +114,11 @@
     flex-shrink: 0;
 }
 
+.service-icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+}
+
 .service-item:hover .service-icon-wrapper {
     background: var(--color-accent);
     color: var(--color-white);
