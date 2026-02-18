@@ -15,7 +15,7 @@ import LoadingSpinner from './components/LoadingSpinner';
 
 // Lazy-loaded pages — each page is split into its own chunk for faster initial load
 const Home = lazy(() => import('./pages/Home'));
-const Services = lazy(() => import('./pages/Services'));
+
 const MobileWebDev = lazy(() => import('./pages/MobileWebDev'));
 const CloudComputing = lazy(() => import('./pages/CloudComputing'));
 const Consulting = lazy(() => import('./pages/Consulting'));
@@ -38,7 +38,7 @@ const AnimatedRoutes = () => {
                 <Routes location={location} key={location.pathname}>
                     <Route path="/" element={<PageTransition><Home /></PageTransition>} />
                     <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-                    <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
+
                     <Route path="/mobile-web-development" element={<PageTransition><MobileWebDev /></PageTransition>} />
                     <Route path="/cloud-computing" element={<PageTransition><CloudComputing /></PageTransition>} />
                     <Route path="/consulting" element={<PageTransition><Consulting /></PageTransition>} />

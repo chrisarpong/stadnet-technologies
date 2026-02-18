@@ -86,7 +86,40 @@ const Navbar = () => {
                     <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
                         <Link to="/" className="nav-link">Home</Link>
                         <Link to="/about" className="nav-link">About</Link>
-                        <Link to="/services" className="nav-link">Services</Link>
+                        <div
+                            className="nav-dropdown"
+                            onMouseEnter={() => !isMobileMenuOpen && setActiveDropdown('solutions')}
+                            onMouseLeave={() => !isMobileMenuOpen && setActiveDropdown(null)}
+                        >
+                            <button
+                                className="nav-link dropdown-toggle"
+                                onClick={() => isMobileMenuOpen && toggleDropdown('solutions')}
+                                aria-expanded={activeDropdown === 'solutions'}
+                            >
+                                Solutions
+                                <svg
+                                    className={`dropdown-icon ${activeDropdown === 'solutions' ? 'active' : ''}`}
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 12 12"
+                                    fill="none"
+                                >
+                                    <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </button>
+                            <div className={`dropdown-menu ${activeDropdown === 'solutions' ? 'active' : ''}`}>
+                                {services.map((service, index) => (
+                                    <Link
+                                        key={index}
+                                        to={service.path}
+                                        className="dropdown-item"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        {service.name}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
                         <Link to="/careers" className="nav-link">Careers</Link>
                         <Link to="/contact" className="nav-link">Contact</Link>
                     </div>
