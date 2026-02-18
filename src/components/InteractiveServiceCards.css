@@ -57,15 +57,15 @@
     flex: 1 1 calc(33.333% - 1.5rem);
     min-width: 280px;
     padding: var(--spacing-xl);
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: var(--radius-lg);
-    box-shadow: var(--glass-shadow);
+    box-shadow: none;
 }
 
 .service-item.slide-in {
@@ -75,9 +75,9 @@
 
 .service-item:hover {
     transform: translateY(-5px);
-    background: var(--glass-bg-light);
-    border-color: var(--glass-border-strong);
-    box-shadow: var(--glass-shadow-hover);
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
 }
 
 /* Service Number — hidden in card layout */
@@ -158,19 +158,9 @@
     margin-top: auto;
 }
 
+/* Underline removed */
 .service-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--color-accent);
-    transition: width var(--transition-normal);
-}
-
-.service-link:hover::after {
-    width: 100%;
+    display: none;
 }
 
 .service-link:hover {
