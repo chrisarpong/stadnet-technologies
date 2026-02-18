@@ -343,3 +343,44 @@
         min-height: 150px;
     }
 }
+
+/* Landscape Mobile Fix */
+@media (max-width: 900px) and (orientation: landscape) {
+    .parallax-hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 100px !important;
+        padding-bottom: 2rem;
+    }
+
+    .hero-split-layout {
+        margin-top: 0;
+        grid-template-columns: 1fr 1fr;
+        /* Side by side in landscape if enough width */
+        gap: var(--spacing-md);
+        align-items: center;
+    }
+
+    .hero-text-content {
+        text-align: left;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        margin-top: 0;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-image-box {
+        min-height: 200px;
+        max-height: 300px;
+    }
+
+    .hero-cta {
+        padding: 0.75rem 1.5rem;
+    }
+}

@@ -267,3 +267,16 @@
         font-size: 0.875rem;
     }
 }
+
+/* Landscape Mobile Fix */
+@media (max-width: 900px) and (orientation: landscape) {
+    .services-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .service-item {
+        flex: 1 1 calc(50% - 1.5rem);
+        min-width: unset;
+    }
+}

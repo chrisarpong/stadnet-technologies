@@ -413,3 +413,19 @@
         justify-content: center;
     }
 }
+
+/* Landscape Mobile Fix */
+@media (max-width: 900px) and (orientation: landscape) {
+    .navbar-menu {
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .nav-link-primary {
+        margin-top: 1rem;
+    }
+}
