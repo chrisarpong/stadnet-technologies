@@ -94,8 +94,12 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: var(--color-text-dark);
-  background: var(--color-white);
+  color: var(--color-white);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #16213e 75%, #1a1a2e 100%);
+  background-size: 400% 400%;
+  background-position: center;
+  background-attachment: fixed;
+  animation: gradientShift 15s ease infinite;
   line-height: 1.6;
   overflow-x: clip;
   position: relative;
@@ -112,7 +116,7 @@ h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
-  color: var(--color-primary-dark);
+  color: var(--color-white);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -144,6 +148,7 @@ h6 {
 p {
   margin-bottom: var(--spacing-sm);
   font-size: clamp(0.9rem, 2vw, 1rem);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 a {
@@ -277,7 +282,7 @@ a:hover {
 }
 
 .section-alt {
-  background: var(--color-off-white);
+  background: transparent;
 }
 
 /* === GRID SYSTEM === */
@@ -656,25 +661,30 @@ a:hover {
 /* === CTA SECTION (Global) === */
 .cta-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, #ffffff 0%, var(--color-off-white) 50%, #ffffff 100%);
+  background: transparent;
 }
 
 .cta-content {
   padding: var(--spacing-3xl) var(--spacing-2xl);
   text-align: center;
-  background: var(--color-white);
-  box-shadow: 0 4px 30px rgba(0, 102, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
+  /* Glass effect */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .cta-content h2 {
-  color: var(--color-primary-dark);
+  color: var(--color-white);
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   margin-bottom: var(--spacing-md);
 }
 
 .cta-content p {
   font-size: 1.125rem;
-  color: var(--color-text-dark);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--spacing-xl);
   max-width: 700px;
   margin-left: auto;

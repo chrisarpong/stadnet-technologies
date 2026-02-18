@@ -1,6 +1,6 @@
 .interactive-services {
     padding: var(--spacing-3xl) 0;
-    background: var(--color-white);
+    background: transparent;
 }
 
 @media (max-width: 768px) {
@@ -13,19 +13,19 @@
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
     text-align: center;
-    color: var(--color-primary-dark);
+    color: var(--color-white);
     margin-bottom: var(--spacing-md);
     transition: color var(--transition-normal);
 }
 
 .section-title:hover {
-    color: var(--color-primary-light);
+    color: var(--color-accent-light);
 }
 
 .section-subtitle {
     text-align: center;
     font-size: 1.25rem;
-    color: var(--color-text-dark);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: var(--spacing-3xl);
     max-width: 600px;
     margin-left: auto;
@@ -128,17 +128,17 @@
 .service-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--color-primary-dark);
+    color: var(--color-white);
     margin: 0;
     transition: all var(--transition-fast);
 }
 
 .service-item:hover .service-title {
-    color: var(--color-primary);
+    color: var(--color-accent-light);
 }
 
 .service-description {
-    color: #555555;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
     margin-bottom: var(--spacing-md);
     font-size: 0.95rem;
