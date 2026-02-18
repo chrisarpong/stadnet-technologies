@@ -7,7 +7,7 @@
 .story-content p {
     font-size: 1.125rem;
     line-height: 1.7;
-    color: var(--color-text-dark);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .mission-vision-grid {
@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-top: 4px solid var(--color-primary-dark);
+    border-top: 4px solid var(--color-accent);
 }
 
 .mv-card h3 {

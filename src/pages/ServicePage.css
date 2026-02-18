@@ -13,26 +13,28 @@
 .service-intro p {
     font-size: 1.0625rem;
     line-height: 1.8;
-    color: var(--color-text-dark);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .feature-card {
     padding: var(--spacing-lg);
     animation: fadeInUp 0.8s ease-out forwards;
     opacity: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
 }
 
 .feature-card h4 {
-    color: var(--color-primary);
+    color: var(--color-accent-light);
     font-size: 1.125rem;
     margin-bottom: var(--spacing-sm);
 }
 
 .feature-card p {
-    color: var(--color-text-dark);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.9375rem;
     line-height: 1.7;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
