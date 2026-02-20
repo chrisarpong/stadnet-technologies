@@ -20,6 +20,7 @@ const MobileWebDev = lazy(() => import('./pages/MobileWebDev'));
 const CloudComputing = lazy(() => import('./pages/CloudComputing'));
 const Consulting = lazy(() => import('./pages/Consulting'));
 const Engineering = lazy(() => import('./pages/Engineering'));
+const GraphicDesign = lazy(() => import('./pages/GraphicDesign'));
 const Careers = lazy(() => import('./pages/Careers'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -43,6 +44,7 @@ const AnimatedRoutes = () => {
                     <Route path="/cloud-computing" element={<PageTransition><CloudComputing /></PageTransition>} />
                     <Route path="/consulting" element={<PageTransition><Consulting /></PageTransition>} />
                     <Route path="/engineering" element={<PageTransition><Engineering /></PageTransition>} />
+                    <Route path="/graphic-design" element={<PageTransition><GraphicDesign /></PageTransition>} />
                     <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
                     <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
                     <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />

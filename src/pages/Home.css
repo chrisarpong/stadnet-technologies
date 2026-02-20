@@ -30,13 +30,13 @@
 .section-header h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: var(--spacing-md);
-    color: var(--color-primary-dark);
+    color: var(--color-white);
 }
 
 .section-subtitle {
     font-size: clamp(1rem, 2vw, 1.25rem);
-    color: var(--color-text-dark);
-    opacity: 0.8;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 1;
     line-height: 1.6;
 }
 
