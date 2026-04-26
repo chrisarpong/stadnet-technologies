@@ -12,10 +12,6 @@ export default defineConfig({
             return undefined
           }
 
-          if (id.includes('react-dom') || id.includes('react-router-dom') || id.includes('react-helmet-async') || id.includes('/react/')) {
-            return 'react-core'
-          }
-
           if (id.includes('@emailjs')) {
             return 'emailjs'
           }
@@ -24,7 +20,7 @@ export default defineConfig({
             return 'icon-vendor'
           }
 
-          return 'vendor'
+          return undefined
         }
       }
     }

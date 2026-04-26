@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import Breadcrumb from '../components/Breadcrumb';
@@ -41,6 +40,8 @@ const Contact = () => {
             if (!serviceId || !templateId || !publicKey) {
                 throw new Error('Missing EmailJS environment variables');
             }
+
+            const { default: emailjs } = await import('@emailjs/browser');
 
             await emailjs.sendForm(
                 serviceId,

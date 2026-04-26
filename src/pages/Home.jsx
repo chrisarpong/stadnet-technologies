@@ -147,6 +147,35 @@ const Home = () => {
         }
     ];
 
+    const trustSignals = [
+        {
+            metric: '40% faster',
+            label: 'reporting cycles',
+            detail: 'from a connected operations visibility platform'
+        },
+        {
+            metric: 'Cross-functional',
+            label: 'delivery leadership',
+            detail: 'spanning strategy, systems, cloud, and execution'
+        },
+        {
+            metric: 'Phased',
+            label: 'launch approach',
+            detail: 'built to create visibility early and reduce delivery risk'
+        }
+    ];
+
+    const trustNotes = [
+        {
+            title: 'Built around real operating pressure',
+            description: 'We focus on delivery bottlenecks, reporting drag, and fragmented handoffs that slow teams down.'
+        },
+        {
+            title: 'One partner across strategy and execution',
+            description: 'Instead of splitting planning from implementation, KYNOVA helps teams move from decision to delivery in one flow.'
+        }
+    ];
+
     const process = [
         {
             step: '01',
@@ -205,7 +234,13 @@ const Home = () => {
                                 automate operations, and turn digital ambition into measurable progress.
                             </p>
                             <div className="home-hero-actions">
-                                <Link className="btn btn-primary btn-large" to="/contact">Let&apos;s discuss your project</Link>
+                                <Link className="btn btn-primary btn-large" to="/contact">Book a consultation</Link>
+                                <a className="btn btn-secondary btn-large" href="#trust-signals">See delivery proof</a>
+                            </div>
+                            <div className="home-hero-trust-list">
+                                <span><FaCheckCircle /> Strategy, delivery, and technical execution in one team</span>
+                                <span><FaCheckCircle /> Practical support for internal platforms, cloud, and workflow modernization</span>
+                                <span><FaCheckCircle /> Clear delivery rhythms designed for stakeholder visibility</span>
                             </div>
                         </div>
 
@@ -248,6 +283,42 @@ const Home = () => {
                 </div>
             </section>
 
+            <section className="section home-trust" id="trust-signals">
+                <div className="container">
+                    <div className="section-header text-center">
+                        <span className="home-mini-tag">Why teams trust the model</span>
+                        <h2 className="section-title">Proof points that help stakeholders say yes faster.</h2>
+                        <p className="section-subtitle">
+                            Bring decision-makers into the conversation with clearer evidence of delivery value,
+                            execution structure, and the kind of outcomes this model is built to unlock.
+                        </p>
+                    </div>
+
+                    <div className="home-trust-grid">
+                        {trustSignals.map((signal, index) => (
+                            <article className="home-trust-card" key={signal.label} data-aos="fade-up" data-aos-delay={index * 100}>
+                                <strong>{signal.metric}</strong>
+                                <span>{signal.label}</span>
+                                <p>{signal.detail}</p>
+                            </article>
+                        ))}
+                    </div>
+
+                    <div className="home-trust-notes">
+                        {trustNotes.map((note, index) => (
+                            <article className="home-trust-note" key={note.title} data-aos="fade-up" data-aos-delay={index * 100}>
+                                <h3>{note.title}</h3>
+                                <p>{note.description}</p>
+                            </article>
+                        ))}
+                    </div>
+
+                    <div className="home-center-cta">
+                        <Link className="btn btn-primary" to="/contact">Book a consultation</Link>
+                    </div>
+                </div>
+            </section>
+
             <section className="section home-problem">
                 <div className="container">
                     <div className="home-two-col">
@@ -274,7 +345,7 @@ const Home = () => {
                                 <li><FaCheckCircle /> Practical modernization support shaped around business outcomes</li>
                                 <li><FaCheckCircle /> Execution rhythms built for visibility, trust, and iteration</li>
                             </ul>
-                            <Link className="btn btn-primary" to="/contact">Let&apos;s discuss your project</Link>
+                            <Link className="btn btn-primary" to="/contact">Book a consultation</Link>
                         </div>
                     </div>
                 </div>
@@ -371,7 +442,7 @@ const Home = () => {
                     </div>
 
                     <div className="home-center-cta">
-                        <Link className="btn btn-primary" to="/contact">Let&apos;s discuss your project</Link>
+                        <Link className="btn btn-primary" to="/contact">Book a consultation</Link>
                     </div>
                 </div>
             </section>
@@ -427,7 +498,7 @@ const Home = () => {
                     </div>
 
                     <div className="home-center-cta">
-                        <Link className="btn btn-primary" to="/contact">Let&apos;s discuss your project</Link>
+                        <Link className="btn btn-primary" to="/contact">Book a consultation</Link>
                     </div>
                 </div>
             </section>
@@ -501,7 +572,7 @@ const Home = () => {
                     </div>
 
                     <div className="home-center-cta">
-                        <Link className="btn btn-primary" to="/contact">Let&apos;s discuss your project</Link>
+                        <Link className="btn btn-primary" to="/contact">Book a consultation</Link>
                     </div>
                 </div>
             </section>
@@ -554,7 +625,7 @@ const Home = () => {
                             Get research-backed thinking on operations, cloud, automation, product delivery, and smarter execution.
                         </p>
                         <div className="home-newsletter-actions">
-                            <Link className="btn btn-primary btn-large" to="/contact">Talk to KYNOVA</Link>
+                            <Link className="btn btn-primary btn-large" to="/contact">Book a consultation</Link>
                             <Link className="btn btn-secondary btn-large" to="/about">Learn more about us</Link>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ const Footer = () => {
                             <span className="footer-kicker">Built for modern delivery</span>
                             <h2>Let&apos;s shape practical digital systems that move your team forward.</h2>
                         </div>
-                        <Link className="footer-cta" to="/contact">Let&apos;s discuss your project</Link>
+                        <Link className="footer-cta" to="/contact">Book a consultation</Link>
                     </div>
 
                     <div className="footer-content">

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaMobileAlt, FaCloud, FaPencilRuler, FaHandshake, FaCogs } from 'react-icons/fa';
 import { imageAssets } from '../lib/siteAssets';
 import './Navbar.css';
 
@@ -63,12 +62,11 @@ const Navbar = () => {
     };
 
     const services = [
-        { name: 'Mobile & Web Development', path: '/mobile-web-development', icon: <FaMobileAlt /> },
-        { name: 'Cloud Computing', path: '/cloud-computing', icon: <FaCloud /> },
-        { name: 'Graphic Design', path: '/graphic-design', icon: <FaPencilRuler /> },
-
-        { name: 'Consulting', path: '/consulting', icon: <FaHandshake /> },
-        { name: 'Engineering & Digitization', path: '/engineering', icon: <FaCogs /> },
+        { name: 'Mobile & Web Development', path: '/mobile-web-development' },
+        { name: 'Cloud Computing', path: '/cloud-computing' },
+        { name: 'Graphic Design', path: '/graphic-design' },
+        { name: 'Consulting', path: '/consulting' },
+        { name: 'Engineering & Digitization', path: '/engineering' },
     ];
 
     const isSolutionsActive = services.some((service) => location.pathname === service.path);
