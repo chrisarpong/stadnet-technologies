@@ -1,28 +1,11 @@
-import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';
-import SEO from '../components/SEO';
 import { FaServer, FaRobot, FaProjectDiagram, FaDigitalTachograph, FaDatabase, FaCode } from 'react-icons/fa';
 import './ServicePage.css';
 import Breadcrumb from '../components/Breadcrumb';
 
 
 const Engineering = () => {
-    const highlights = [
-        {
-            title: 'Best suited for',
-            description: 'Teams dealing with legacy workflows, fragmented systems, manual operations, or a growing need for cleaner digital infrastructure.'
-        },
-        {
-            title: 'Typical outcomes',
-            description: 'Less manual friction, stronger system connectivity, improved workflow visibility, and more resilient digital foundations across operations.'
-        },
-        {
-            title: 'How we approach it',
-            description: 'We focus on practical modernization, not disruption for its own sake, so engineering work supports continuity while improving long-term capability.'
-        }
-    ];
-
     const features = [
         {
             title: 'Legacy System Modernization',
@@ -58,17 +41,12 @@ const Engineering = () => {
 
     const breadcrumbItems = [
         { label: 'Home', path: '/' },
+        { label: 'Solutions', path: '/solutions' },
         { label: 'Engineering & Digitization', path: '/engineering' }
     ];
 
     return (
         <div className="service-page">
-            <SEO
-                title="Engineering and Digitization Services | KYNOVA"
-                description="Engineering and digitization services for organisations modernizing systems, automating workflows, and improving operational visibility."
-                keywords="digitization, engineering services, process automation, enterprise integration, KYNOVA"
-            />
-
             <Breadcrumb items={breadcrumbItems} />
 
             <Hero
@@ -90,26 +68,8 @@ const Engineering = () => {
                         </p>
                     </div>
 
-                    <div className="service-highlight-grid mb-xl">
-                        {highlights.map((item) => (
-                            <article className="service-highlight-card" key={item.title}>
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
-                            </article>
-                        ))}
-                    </div>
-
                     <h3 className="section-title text-center mb-lg">Engineering Services</h3>
                     <InteractiveServiceCards services={features} />
-
-                    <div className="service-bottom-cta">
-                        <div>
-                            <span className="service-kicker">Modernising operations?</span>
-                            <h3>Let&apos;s shape the engineering work that removes friction and builds better systems.</h3>
-                            <p>We can help define the modernization path, workflow priorities, and integration approach that fits your organisation.</p>
-                        </div>
-                        <Link className="service-inline-link" to="/contact">Talk to KYNOVA</Link>
-                    </div>
                 </div>
             </section>
         </div>

@@ -10,23 +10,15 @@ const ScrollToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        let ticking = false;
-
         const toggleVisibility = () => {
-            if (ticking) {
-                return;
+            if (window.pageYOffset > 300) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
             }
-
-            ticking = true;
-
-            window.requestAnimationFrame(() => {
-                setIsVisible(window.pageYOffset > 300);
-                ticking = false;
-            });
         };
 
-        toggleVisibility();
-        window.addEventListener('scroll', toggleVisibility, { passive: true });
+        window.addEventListener('scroll', toggleVisibility);
         return () => window.removeEventListener('scroll', toggleVisibility);
     }, []);
 
