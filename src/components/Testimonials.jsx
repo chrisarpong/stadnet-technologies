@@ -64,10 +64,6 @@ const Testimonials = () => {
                                     src={testimonial.image}
                                     alt={testimonial.name}
                                     className="author-image"
-                                    width="80"
-                                    height="80"
-                                    loading="lazy"
-                                    decoding="async"
                                 />
                                 <div className="author-info">
                                     <h5 className="author-name">{testimonial.name}</h5>

@@ -1,151 +1,55 @@
-import { useState } from 'react';
+/**
+ * Home Page
+ *
+ * TODO: Future Improvements
+ * -------------------------
+ * 1. FAQ Component — FAQ.jsx already exists, add it to this page or Contact page for common questions
+ * 2. Blog/Insights Page — Create a blog page for tech articles, case studies, and industry news (great for SEO)
+ * 3. Portfolio/Case Studies — Showcase completed projects to build credibility with potential clients
+ * 4. WhatsApp Integration — Add a floating WhatsApp chat button for instant client communication (common in Ghana)
+ * 5. Scroll-Triggered Animations — Add AOS (Animate On Scroll) library or Intersection Observer for section animations
+ * 6. Open Graph Images — Add og:image meta tags for proper social media previews on WhatsApp, LinkedIn, Twitter
+ */
+
 import SEO from '../components/SEO';
-import { Link } from 'react-router-dom';
-import {
-    FaArrowRight,
-    FaChartLine,
-    FaCheckCircle,
-    FaLeaf,
-    FaLinkedinIn,
-    FaEnvelope,
-    FaPlay,
-    FaRobot,
-    FaSeedling,
-    FaStethoscope,
-    FaUsers,
-    FaWarehouse
-} from 'react-icons/fa';
-import { imageAssets } from '../lib/siteAssets';
+import ParallaxHero from '../components/ParallaxHero';
+import InteractiveServiceCards from '../components/InteractiveServiceCards';
+
 import './Home.css';
 
 const Home = () => {
-    const [openDomains, setOpenDomains] = useState({});
-    const clientLogos = [
-        'Enterprise Teams',
-        'Public Sector',
-        'Healthcare',
-        'Fintech',
-        'Agribusiness',
-        'NGOs',
-        'Operations',
-        'Growth Ventures'
-    ];
-
-    const leaders = [
-        {
-            name: 'Ama Boateng',
-            role: 'Head of Delivery',
-            summary: '12+ years leading transformation programs across Africa and Europe.',
-            detail: 'Strategy, operations, and cross-functional execution for large digital initiatives.',
-            initials: 'AB',
-            image: imageAssets.leaderAma,
-            email: 'ama.boateng@kynova.com',
-            linkedin: null
-        },
-        {
-            name: 'Kwesi Mensah',
-            role: 'Lead Solutions Architect',
-            summary: '10+ years building cloud platforms, integrations, and internal systems.',
-            detail: 'Architecture, engineering leadership, and practical modernization roadmaps.',
-            initials: 'KM',
-            image: imageAssets.leaderKwesi,
-            email: 'kwesi.mensah@kynova.com',
-            linkedin: null
-        },
-        {
-            name: 'Naa Adjeley',
-            role: 'Senior Product Strategist',
-            summary: 'Specialist in service design, product delivery, and digital operating models.',
-            detail: 'Brings business clarity to product, process, and stakeholder decisions.',
-            initials: 'NA',
-            image: imageAssets.leaderNaa,
-            email: 'naa.adjeley@kynova.com',
-            linkedin: null
-        }
-    ];
-
-    const solutions = [
+    const services = [
         {
             title: 'Mobile & Web Development',
-            description: 'Build responsive customer experiences, internal tools, and digital products that are easier to scale and maintain.',
-            image: imageAssets.meeting,
-            path: '/mobile-web-development'
+            description: 'Build cutting-edge mobile and web applications with modern technologies and best practices for optimal performance.',
+            link: '/mobile-web-development',
+            icon: (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="5" y="2" width="14" height="20" rx="2" strokeWidth="2" />
+                    <path d="M12 18h.01" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+            )
         },
         {
             title: 'Cloud Computing',
-            description: 'Improve reliability, scalability, and release confidence with stronger cloud foundations and modern delivery environments.',
-            image: imageAssets.presentation,
-            path: '/cloud-computing'
-        },
-        {
-            title: 'Consulting',
-            description: 'Shape clearer technology priorities, operating models, and transformation roadmaps with practical strategic guidance.',
-            image: imageAssets.team,
-            path: '/consulting'
-        },
-        {
-            title: 'Engineering & Digitization',
-            description: 'Modernise legacy workflows, connect fragmented systems, and create better execution foundations across operations.',
-            image: imageAssets.presentation,
-            path: '/engineering'
+            description: 'Leverage the power of cloud infrastructure for scalable, secure, and cost-effective solutions tailored to your business.',
+            link: '/cloud-computing',
+            icon: (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+            )
         },
         {
             title: 'Graphic Design',
-            description: 'Create stronger visual systems, product interfaces, and branded materials that help your organisation communicate clearly.',
-            image: imageAssets.meeting,
-            path: '/graphic-design'
-        }
-    ];
-
-    const domains = [
-        {
-            title: 'Industrial Operations',
-            description: 'Digitise workflows, monitor assets, and reduce operational inefficiency across distributed teams.',
-            icon: <FaWarehouse />,
-            image: imageAssets.presentation
+            description: 'Create stunning visual identities and designs that capture your brand essence and engage your audience effectively.',
+            link: '/graphic-design',
+            icon: (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+            )
         },
-        {
-            title: 'Healthcare & Life Sciences',
-            description: 'Strengthen service systems, reporting, and user-facing platforms that support care delivery.',
-            icon: <FaStethoscope />,
-            image: imageAssets.meeting
-        },
-        {
-            title: 'Agriculture & Supply Chain',
-            description: 'Improve planning, forecasting, visibility, and field operations across production ecosystems.',
-            icon: <FaSeedling />,
-            image: imageAssets.team
-        },
-        {
-            title: 'Digital & Professional Services',
-            description: 'Streamline internal operations, personalize experiences, and improve digital service performance.',
-            icon: <FaUsers />,
-            image: imageAssets.meeting
-        },
-        {
-            title: 'Sustainability & Green Tech',
-            description: 'Support climate and sustainability programs with better tools, measurement, and delivery systems.',
-            icon: <FaLeaf />,
-            image: imageAssets.presentation
-        }
-    ];
-
-    const impactCards = [
-        {
-            title: 'Operations Visibility Platform',
-            sector: 'Enterprise Operations',
-            metrics: ['40% faster reporting cycles', 'Improved executive visibility', 'Reduced manual reconciliation'],
-            description: 'A connected dashboard and workflow setup that gave leadership clearer oversight across teams and milestones.',
-            image: imageAssets.presentation
-        },
-        {
-            title: 'Service Delivery Workflow Redesign',
-            sector: 'Professional Services',
-            metrics: ['Shorter turnaround time', 'Better handoff clarity', 'Stronger process consistency'],
-            description: 'A digital workflow redesign that turned fragmented coordination into a more measurable delivery system.',
-            image: imageAssets.meeting
-        }
-    ];
 
     const trustSignals = [
         {
@@ -178,49 +82,36 @@ const Home = () => {
 
     const process = [
         {
-            step: '01',
-            title: 'Discuss Your Delivery Goals',
-            description: 'We start with the business problem, constraints, urgency, and what success should look like.'
+            title: 'Consulting',
+            description: 'Strategic IT consulting services to guide your digital transformation and optimize your technology investments.',
+            link: '/consulting',
+            icon: (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" strokeWidth="2" />
+                    <circle cx="9" cy="7" r="4" strokeWidth="2" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" strokeWidth="2" />
+                </svg>
+            )
         },
         {
-            step: '02',
-            title: 'Shape the Right Build Approach',
-            description: 'We define the right team, scope, milestones, and working rhythm for the outcome you need.'
-        },
-        {
-            step: '03',
-            title: 'Launch in Measurable Phases',
-            description: 'We deliver in stages, create visibility, and refine based on results instead of guesswork.'
-        }
-    ];
-
-    const insights = [
-        {
-            title: 'Designing Smarter Internal Platforms for Growth Teams',
-            description: 'How modern internal systems reduce chaos, improve reporting, and support better decision-making.',
-            link: '/about',
-            image: imageAssets.team
-        },
-        {
-            title: 'What Good Digital Transformation Actually Looks Like',
-            description: 'A practical view of transformation that focuses on process clarity, execution, and measurable change.',
-            link: '/about',
-            image: imageAssets.presentation
-        },
-        {
-            title: 'Where AI and Automation Create Real Business Value',
-            description: 'The strongest AI opportunities usually come from workflow bottlenecks, not hype alone.',
-            link: '/contact',
-            image: imageAssets.meeting
+            title: 'Engineering & Digitization',
+            description: 'Transform legacy systems with modern engineering practices and comprehensive digitization strategies.',
+            link: '/engineering',
+            icon: (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polyline points="16 18 22 12 16 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <polyline points="8 6 2 12 8 18" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+            )
         }
     ];
 
     return (
-        <div className="home-page home-ishango">
+        <div className="home-page">
             <SEO
                 title="Home"
-                description="KYNOVA delivers managed digital transformation support through product engineering, cloud modernization, automation, and insight-led execution."
-                keywords="KYNOVA, digital transformation, product engineering, cloud modernization, automation, dashboards, Ghana"
+                description="KYNOVA - Leading provider of mobile & web development, cloud computing, graphic design, product design, consulting, and engineering services in Ghana."
+                keywords="IT solutions, web development, mobile apps, cloud computing, graphic design, product design, consulting, engineering, Ghana, Accra"
             />
 
             <section className="home-hero">
@@ -502,14 +393,19 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            {/* Parallax Hero */}
+            <ParallaxHero
+                title="Your Partner in Digital Innovation"
+                subtitle="We provide cutting-edge technology solutions that drive growth and transform businesses across Africa"
+            />
 
-            <section className="section home-impact">
+            {/* Interactive Service Cards */}
+            <section className="section services-section">
                 <div className="container">
                     <div className="section-header text-center">
-                        <span className="home-mini-tag">Real-world impact</span>
-                        <h2 className="section-title">Proven Delivery Outcomes</h2>
+                        <h2 className="text-gradient">Our Services</h2>
                         <p className="section-subtitle">
-                            We help organisations strengthen operations, reporting, product execution, and cross-team visibility with more intentional digital systems.
+                            Comprehensive technology solutions tailored to drive your business forward
                         </p>
                     </div>
 
@@ -574,47 +470,12 @@ const Home = () => {
                     <div className="home-center-cta">
                         <Link className="btn btn-primary" to="/contact">Book a consultation</Link>
                     </div>
+                    <InteractiveServiceCards services={services} />
                 </div>
             </section>
 
-            <section className="section home-quote-banner home-quote-banner-secondary">
-                <div className="container">
-                    <div className="home-quote-shell" data-aos="fade-up">
-                        <h2>&ldquo;Building this in-house could take months. A focused managed team helps momentum start much sooner.&rdquo;</h2>
-                        <p>Common client reality we designed this page around</p>
-                    </div>
-                </div>
-            </section>
 
-            <section className="section home-insights">
-                <div className="container">
-                    <div className="section-header text-center">
-                        <span className="home-mini-tag">Unlock value from your systems</span>
-                        <h2 className="section-title">Insights for Smarter Delivery</h2>
-                    </div>
 
-                    <div className="home-insight-grid">
-                        {insights.map((item, index) => (
-                            <article className="home-insight-card" key={item.title} data-aos="fade-up" data-aos-delay={index * 100}>
-                                <img
-                                    className="home-insight-thumb"
-                                    src={item.image.src}
-                                    srcSet={item.image.srcSet}
-                                    sizes={item.image.sizes}
-                                    width={item.image.width}
-                                    height={item.image.height}
-                                    alt={item.title}
-                                    loading="lazy"
-                                    decoding="async"
-                                />
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
-                                <Link to={item.link}>Read more</Link>
-                            </article>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             <section className="section home-newsletter">
                 <div className="container">

@@ -10,24 +10,10 @@ const Navbar = () => {
     const location = useLocation();
 
     useEffect(() => {
-        let ticking = false;
-
         const handleScroll = () => {
-            if (ticking) {
-                return;
-            }
-
-            ticking = true;
-
-            window.requestAnimationFrame(() => {
-                setIsScrolled(window.scrollY > 20);
-                ticking = false;
-            });
+            setIsScrolled(window.scrollY > 20);
         };
-
-        handleScroll();
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
+        window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -69,23 +55,12 @@ const Navbar = () => {
         { name: 'Engineering & Digitization', path: '/engineering' },
     ];
 
-    const isSolutionsActive = services.some((service) => location.pathname === service.path);
-
-    const isAboutPage = location.pathname === '/about';
-
     return (
-        <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${isAboutPage ? 'navbar-about' : ''}`}>
+        <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
             <div className="container">
                 <div className="navbar-content">
                     <Link to="/" className="navbar-logo">
-                        <img
-                            src={imageAssets.logo.src}
-                            alt="KYNOVA"
-                            className="logo-image"
-                            width={imageAssets.logo.width}
-                            height={imageAssets.logo.height}
-                            fetchPriority="high"
-                        />
+                        <img src="/logo.png" alt="KYNOVA" className="logo-image" />
                         <span className="logo-text-brand">KYNOVA</span>
                     </Link>
 
@@ -108,15 +83,15 @@ const Navbar = () => {
                     )}
 
                     <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-                        <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
-                        <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About</Link>
+                        <Link to="/" className="nav-link">Home</Link>
+                        <Link to="/about" className="nav-link">About</Link>
                         <div
                             className="nav-dropdown"
                             onMouseEnter={() => !isMobileMenuOpen && setActiveDropdown('solutions')}
                             onMouseLeave={() => !isMobileMenuOpen && setActiveDropdown(null)}
                         >
                             <button
-                                className={`nav-link dropdown-toggle ${isSolutionsActive ? 'active' : ''}`}
+                                className="nav-link dropdown-toggle"
                                 onClick={() => isMobileMenuOpen && toggleDropdown('solutions')}
                                 aria-expanded={activeDropdown === 'solutions'}
                             >
@@ -135,8 +110,8 @@ const Navbar = () => {
                                 ))}
                             </div>
                         </div>
-                        <Link to="/careers" className={`nav-link ${location.pathname === '/careers' ? 'active' : ''}`}>Careers</Link>
-                        <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
+                        <Link to="/careers" className="nav-link">Careers</Link>
+                        <Link to="/contact" className="nav-link">Contact</Link>
                     </div>
                 </div>
             </div>

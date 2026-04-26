@@ -6,7 +6,7 @@
     width: 100%;
     /* Background handled globally in body */
     overflow: hidden;
-    margin-top: var(--navbar-height);
+    margin-top: 70px;
 }
 
 .hero-large {
@@ -121,6 +121,7 @@
 /* Responsive */
 @media (max-width: 768px) {
     .hero {
+        margin-top: 60px;
         background-attachment: scroll;
     }
 

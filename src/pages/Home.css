@@ -1,39 +1,16 @@
-.home-ishango {
+.home-page {
+    min-height: 100vh;
     position: relative;
-    overflow: hidden;
-    background:
-        radial-gradient(circle at top left, rgba(200, 168, 75, 0.16), transparent 28%),
-        radial-gradient(circle at 85% 12%, rgba(249, 245, 231, 0.06), transparent 18%),
-        radial-gradient(circle at 72% 64%, rgba(60, 52, 137, 0.22), transparent 24%),
-        linear-gradient(180deg, #31297d 0%, #241d63 26%, #1b154c 100%);
-    color: #f9f5e7;
+    overflow-x: clip;
 }
 
-.home-ishango::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(180deg, rgba(19, 14, 51, 0.42) 0%, rgba(19, 14, 51, 0.62) 100%),
-        url('/home-hero-photo-640.jpg');
-    background-size: cover, cover;
-    background-position: center top, center top;
-    background-repeat: no-repeat, no-repeat;
-    opacity: 0.18;
-    pointer-events: none;
-    z-index: 0;
+/* === HOME PAGE SECTION SPACING === */
+.home-page .services-section {
+    padding: 100px 0;
 }
 
-.home-ishango::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        repeating-linear-gradient(90deg, rgba(249, 245, 231, 0.015) 0, rgba(249, 245, 231, 0.015) 1px, transparent 1px, transparent 72px),
-        repeating-linear-gradient(0deg, rgba(249, 245, 231, 0.015) 0, rgba(249, 245, 231, 0.015) 1px, transparent 1px, transparent 72px);
-    opacity: 0.18;
-    pointer-events: none;
-    z-index: 0;
+.home-page .testimonials-section {
+    padding: 100px 0;
 }
 
 .home-ishango > * {
@@ -171,35 +148,24 @@
 .home-hero-visual {
     position: relative;
     min-height: 560px;
+.home-page .cta-section {
+    padding: 100px 0;
 }
 
-.home-hero-mesh {
-    position: absolute;
-    inset: 2rem 1rem 2rem 1rem;
-    border-radius: 36px;
-    background:
-        linear-gradient(135deg, rgba(249, 245, 231, 0.08), rgba(200, 168, 75, 0.12)),
-        repeating-linear-gradient(90deg, rgba(249, 245, 231, 0.03) 0, rgba(249, 245, 231, 0.03) 1px, transparent 1px, transparent 48px),
-        repeating-linear-gradient(0deg, rgba(249, 245, 231, 0.03) 0, rgba(249, 245, 231, 0.03) 1px, transparent 1px, transparent 48px);
-    border: 1px solid rgba(249, 245, 231, 0.12);
-    box-shadow: 0 30px 80px rgba(9, 7, 29, 0.45);
+.home-page .interactive-service-cards {
+    padding: 100px 0;
 }
 
-.home-hero-card {
-    position: absolute;
-    border-radius: 28px;
-    border: 1px solid rgba(249, 245, 231, 0.12);
-    background: rgba(249, 245, 231, 0.07);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    box-shadow: 0 24px 60px rgba(8, 6, 26, 0.34);
+/* Section Headers */
+.section-header {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-2xl);
 }
 
-.home-stat-card {
-    top: 0;
-    right: 0;
-    width: 62%;
-    padding: 1.4rem;
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-white);
 }
 
 .home-stat-card span {
@@ -1005,36 +971,20 @@
     .home-logo-band {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+.section-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+    line-height: 1.6;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-    .home-hero {
-        padding-top: calc(var(--navbar-height) + 2.5rem);
-    }
 
-    .home-hero-copy h1 {
-        max-width: none;
-        font-size: clamp(2.1rem, 10vw, 3.1rem);
-    }
-
-    .home-hero-visual {
-        min-height: 560px;
-    }
-
-    .home-stat-card,
-    .home-play-card,
-    .home-mini-grid {
-        width: auto;
-        left: 0;
-        right: 0;
-    }
-
-    .home-stat-card {
-        top: 0;
-    }
-
-    .home-play-card {
-        top: 10rem;
+    .home-page .services-section,
+    .home-page .testimonials-section,
+    .home-page .interactive-service-cards {
+        padding: 60px 0;
     }
 
     .home-mini-grid {
@@ -1093,4 +1043,5 @@
         height: 190px;
         min-height: 190px;
     }
+}
 }

@@ -1,18 +1,16 @@
 .parallax-hero {
     position: relative;
     height: 100vh;
-    height: 100svh;
     min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background:
-        radial-gradient(circle at top left, rgba(200, 168, 75, 0.2), transparent 32%),
-        linear-gradient(135deg, #241d63 0%, #31297d 48%, #1b154c 100%);
-    padding-top: calc(var(--navbar-height) + var(--spacing-lg));
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    padding-top: 80px;
 }
 
+/* Parallax background with gradient orbs */
 .parallax-background {
     position: absolute;
     top: 0;
@@ -27,14 +25,14 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    opacity: 0.26;
+    opacity: 0.2;
     animation: float 20s ease-in-out infinite;
 }
 
 .orb-1 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(200, 168, 75, 0.34) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.4) 0%, transparent 70%);
     top: -100px;
     left: -100px;
     animation-delay: 0s;
@@ -43,7 +41,7 @@
 .orb-2 {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(249, 245, 231, 0.18) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 170, 255, 0.3) 0%, transparent 70%);
     bottom: -50px;
     right: -50px;
     animation-delay: 5s;
@@ -52,7 +50,7 @@
 .orb-3 {
     width: 350px;
     height: 350px;
-    background: radial-gradient(circle, rgba(60, 52, 137, 0.55) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(51, 136, 255, 0.35) 0%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -60,6 +58,7 @@
 }
 
 @keyframes float {
+
     0%,
     100% {
         transform: translate(0, 0) scale(1);
@@ -74,6 +73,7 @@
     }
 }
 
+/* Floating geometric shapes */
 .floating-shapes {
     position: absolute;
     top: 0;
@@ -93,7 +93,7 @@
 .shape-circle {
     width: 100px;
     height: 100px;
-    border: 3px solid rgba(249, 245, 231, 0.9);
+    border: 3px solid var(--color-white);
     border-radius: 50%;
     top: 20%;
     left: 10%;
@@ -102,7 +102,7 @@
 .shape-square {
     width: 80px;
     height: 80px;
-    border: 3px solid rgba(200, 168, 75, 0.7);
+    border: 3px solid var(--color-white);
     top: 60%;
     right: 15%;
     transform: rotate(45deg);
@@ -113,7 +113,7 @@
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 87px solid rgba(249, 245, 231, 0.7);
+    border-bottom: 87px solid var(--color-white);
     top: 30%;
     right: 25%;
 }
@@ -121,7 +121,7 @@
 .shape-hexagon {
     width: 70px;
     height: 40px;
-    background: rgba(200, 168, 75, 0.72);
+    background: var(--color-white);
     position: relative;
     top: 70%;
     left: 20%;
@@ -138,14 +138,15 @@
 
 .shape-hexagon::before {
     bottom: 100%;
-    border-bottom: 20px solid rgba(200, 168, 75, 0.72);
+    border-bottom: 20px solid var(--color-white);
 }
 
 .shape-hexagon::after {
     top: 100%;
-    border-top: 20px solid rgba(200, 168, 75, 0.72);
+    border-top: 20px solid var(--color-white);
 }
 
+/* Hero split layout */
 .hero-split-layout {
     position: relative;
     z-index: 10;
@@ -156,6 +157,7 @@
     min-height: 600px;
 }
 
+/* Left side - Text content */
 .hero-text-content {
     padding-right: var(--spacing-xl);
 }
@@ -180,46 +182,19 @@
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 2.5rem;
-    background: #c8a84b;
-    color: #1f184f;
-    font-weight: 700;
+    background: var(--color-white);
+    color: var(--color-primary-dark);
+    font-weight: 600;
     font-size: 1.125rem;
     border-radius: 50px;
     text-decoration: none;
     transition: all var(--transition-normal);
 }
 
-.hero-cta-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    align-items: center;
-}
-
 .hero-cta:hover {
     transform: translateY(-3px);
     gap: 0.75rem;
-    background: #d7ba63;
-}
-
-.hero-cta-secondary {
-    background: transparent;
-    color: #f9f5e7;
-    border: 1px solid rgba(249, 245, 231, 0.35);
-    padding: 1rem 1.75rem;
-}
-
-.hero-cta-secondary:hover {
-    background: rgba(249, 245, 231, 0.08);
-    border-color: rgba(249, 245, 231, 0.55);
-    transform: translateY(-3px);
-}
-
-.hero-note {
-    margin-top: var(--spacing-sm);
-    color: rgba(249, 245, 231, 0.8);
-    font-size: 0.95rem;
-    line-height: 1.5;
+    background: var(--color-off-white);
 }
 
 .hero-cta svg {
@@ -230,16 +205,16 @@
     transform: translateX(5px);
 }
 
+/* Right side - Image box */
 .hero-image-box {
-    background: rgba(249, 245, 231, 0.06);
-    border: 1px solid rgba(200, 168, 75, 0.18);
+    background: rgba(0, 102, 255, 0.04);
+    border: none;
     border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 22px 50px rgba(14, 10, 44, 0.25);
 }
 
 .hero-illustration {
@@ -248,6 +223,7 @@
     max-height: 400px;
 }
 
+/* Responsive */
 @media (max-width: 968px) {
     .hero-split-layout {
         grid-template-columns: 1fr;
@@ -259,10 +235,6 @@
     .hero-text-content {
         padding-right: 0;
         text-align: center;
-    }
-
-    .hero-cta-group {
-        justify-content: center;
     }
 
     .hero-image-box {
@@ -280,7 +252,7 @@
         height: auto;
         min-height: auto;
         padding: var(--spacing-2xl) 0;
-        padding-top: calc(var(--navbar-height) + var(--spacing-xl));
+        padding-top: 180px !important;
         display: block;
     }
 
@@ -348,6 +320,7 @@
     }
 }
 
+/* Extra small screens */
 @media (max-width: 480px) {
     .parallax-hero {
         padding: var(--spacing-lg) 0;
@@ -371,6 +344,7 @@
     }
 }
 
+/* Landscape Mobile Fix */
 @media (max-width: 900px) and (orientation: landscape) {
     .parallax-hero {
         height: auto;
@@ -382,6 +356,7 @@
     .hero-split-layout {
         margin-top: 0;
         grid-template-columns: 1fr 1fr;
+        /* Side by side in landscape if enough width */
         gap: var(--spacing-md);
         align-items: center;
     }
