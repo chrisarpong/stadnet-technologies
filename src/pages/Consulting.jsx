@@ -1,28 +1,11 @@
-import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';
-import SEO from '../components/SEO';
 import { FaChess, FaSearch, FaMapSigns, FaCogs, FaHandshake, FaExchangeAlt } from 'react-icons/fa';
 import './ServicePage.css';
 import Breadcrumb from '../components/Breadcrumb';
 
 
 const Consulting = () => {
-    const highlights = [
-        {
-            title: 'Best suited for',
-            description: 'Leaders who need clearer direction around digital priorities, technology decisions, delivery models, or transformation planning.'
-        },
-        {
-            title: 'Typical outcomes',
-            description: 'Sharper roadmaps, better investment choices, reduced delivery confusion, and stronger alignment between business needs and technical execution.'
-        },
-        {
-            title: 'How we approach it',
-            description: 'We combine strategic thinking with practical delivery context so recommendations can actually be implemented and measured.'
-        }
-    ];
-
     const features = [
         {
             title: 'Digital Strategy',
@@ -58,17 +41,12 @@ const Consulting = () => {
 
     const breadcrumbItems = [
         { label: 'Home', path: '/' },
+        { label: 'Solutions', path: '/solutions' },
         { label: 'Consulting', path: '/consulting' }
     ];
 
     return (
         <div className="service-page">
-            <SEO
-                title="Consulting Services | KYNOVA"
-                description="Practical consulting services for digital strategy, roadmap planning, process improvement, and transformation decision-making."
-                keywords="digital consulting, IT consulting, digital strategy, roadmap, process optimization, KYNOVA"
-            />
-
             <Breadcrumb items={breadcrumbItems} />
 
             <Hero
@@ -90,26 +68,8 @@ const Consulting = () => {
                         </p>
                     </div>
 
-                    <div className="service-highlight-grid mb-xl">
-                        {highlights.map((item) => (
-                            <article className="service-highlight-card" key={item.title}>
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
-                            </article>
-                        ))}
-                    </div>
-
                     <h3 className="section-title text-center mb-lg">Consulting Services</h3>
                     <InteractiveServiceCards services={features} />
-
-                    <div className="service-bottom-cta">
-                        <div>
-                            <span className="service-kicker">Need strategic clarity?</span>
-                            <h3>Let&apos;s turn uncertainty into a practical delivery direction.</h3>
-                            <p>We can help you define the next steps, the right priorities, and the shape of the execution effort ahead.</p>
-                        </div>
-                        <Link className="service-inline-link" to="/contact">Talk to KYNOVA</Link>
-                    </div>
                 </div>
             </section>
         </div>

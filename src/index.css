@@ -56,8 +56,8 @@
   --glass-blur: 10px;
 
   /* Typography */
-  --font-heading: "Segoe UI Variable Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "Segoe UI Variable Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -84,16 +84,12 @@
   --screen-tablet: 768px;
   --screen-desktop: 1024px;
   --screen-large: 1440px;
-
-  /* Layout */
-  --navbar-height: 70px;
 }
 
 /* === BASE STYLES === */
 html {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  overflow-x: hidden;
 }
 
 body {
@@ -105,17 +101,9 @@ body {
   background-attachment: fixed;
   animation: gradientShift 15s ease infinite;
   line-height: 1.6;
-  overflow-x: hidden;
   overflow-x: clip;
   position: relative;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-img,
-video,
-canvas {
-  max-width: 100%;
-  height: auto;
 }
 
 /* === TYPOGRAPHY === */
@@ -295,36 +283,6 @@ a:hover {
 
 .section-alt {
   background: transparent;
-}
-
-.section-soft {
-  background: rgba(255, 255, 255, 0.03);
-}
-
-/* === SECTION HEADERS === */
-.section-header {
-  max-width: 800px;
-  margin: 0 auto var(--spacing-2xl);
-}
-
-.section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  color: var(--color-white);
-}
-
-.section-subtitle {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.82);
-  opacity: 1;
-  line-height: 1.6;
-}
-
-.text-center .section-subtitle {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 65ch;
 }
 
 /* === GRID SYSTEM === */
@@ -575,13 +533,6 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  :root {
-    --navbar-height: 60px;
-  }
-
-  body {
-    background-attachment: scroll;
-  }
 
   .glass-card {
     background: rgba(255, 255, 255, 0.05);
@@ -601,10 +552,6 @@ a:hover {
 
   .section {
     padding: var(--spacing-xl) 0;
-  }
-
-  .section-header {
-    margin-bottom: var(--spacing-xl);
   }
 
   .text-center-mobile {

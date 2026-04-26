@@ -22,7 +22,7 @@ const NotFound = () => {
                     <Link to="/" className="btn btn-primary btn-large">
                         Back to Home
                     </Link>
-                    <Link to="/" className="btn btn-secondary btn-large">
+                    <Link to="/solutions" className="btn btn-secondary btn-large">
                         View Our Solutions
                     </Link>
                 </div>
