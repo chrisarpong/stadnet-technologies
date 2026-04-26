@@ -1,0 +1,72 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="170" y1="76" x2="1329" y2="1126" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#352C80"/>
+      <stop offset="0.55" stop-color="#241D63"/>
+      <stop offset="1" stop-color="#16113D"/>
+    </linearGradient>
+    <radialGradient id="goldGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1148 281) rotate(136.847) scale(433.6 392.653)">
+      <stop stop-color="#C8A84B" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#C8A84B" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="creamGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(362 197) rotate(56.2482) scale(294.764 298.891)">
+      <stop stop-color="#F9F5E7" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#F9F5E7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="arc" x1="411" y1="167" x2="1110" y2="877" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9F5E7" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#C8A84B" stop-opacity="0.06"/>
+    </linearGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" stroke="#F9F5E7" stroke-opacity="0.05" stroke-width="1"/>
+      <circle cx="0.5" cy="0.5" r="1.5" fill="#C8A84B" fill-opacity="0.18"/>
+    </pattern>
+    <filter id="blurA" x="761.96" y="54.735" width="620.772" height="620.772" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="60" result="effect1_foregroundBlur_0_1"/>
+    </filter>
+    <filter id="blurB" x="118.233" y="18.2334" width="487.533" height="487.533" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="48" result="effect1_foregroundBlur_0_1"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <rect width="1600" height="1200" fill="url(#grid)"/>
+  <rect width="1600" height="1200" fill="url(#goldGlow)"/>
+  <rect width="1600" height="1200" fill="url(#creamGlow)"/>
+  <g opacity="0.8">
+    <path d="M954 118C1116 181 1225 283 1279 425C1329 555 1307 705 1215 827C1123 949 958 1026 721 1057" stroke="url(#arc)" stroke-width="2"/>
+    <path d="M1006 173C1144 227 1238 310 1288 424C1333 529 1320 652 1247 792C1174 930 1038 1007 839 1024" stroke="url(#arc)" stroke-opacity="0.65" stroke-width="2"/>
+    <path d="M1060 232C1174 277 1253 343 1297 430C1337 511 1332 607 1284 716C1235 824 1133 892 977 921" stroke="url(#arc)" stroke-opacity="0.45" stroke-width="2"/>
+  </g>
+  <g opacity="0.22">
+    <path d="M372 763C463 611 604 533 794 530C978 526 1125 573 1236 672" stroke="#F9F5E7" stroke-width="1.5"/>
+    <path d="M321 812C423 644 580 550 792 548C999 546 1168 599 1301 709" stroke="#F9F5E7" stroke-opacity="0.7" stroke-width="1.5"/>
+  </g>
+  <g filter="url(#blurA)">
+    <circle cx="1072.35" cy="365.121" r="130.386" fill="#C8A84B" fill-opacity="0.34"/>
+  </g>
+  <g filter="url(#blurB)">
+    <circle cx="362" cy="262" r="95.7666" fill="#F9F5E7" fill-opacity="0.12"/>
+  </g>
+  <g opacity="0.22">
+    <rect x="877" y="299" width="238" height="154" rx="24" fill="#F9F5E7" fill-opacity="0.08" stroke="#F9F5E7" stroke-opacity="0.14"/>
+    <rect x="932" y="497" width="284" height="182" rx="28" fill="#F9F5E7" fill-opacity="0.06" stroke="#F9F5E7" stroke-opacity="0.12"/>
+    <rect x="709" y="564" width="168" height="112" rx="22" fill="#C8A84B" fill-opacity="0.06" stroke="#C8A84B" stroke-opacity="0.16"/>
+  </g>
+  <g opacity="0.32">
+    <circle cx="1186" cy="226" r="4" fill="#F9F5E7"/>
+    <circle cx="1232" cy="262" r="3" fill="#C8A84B"/>
+    <circle cx="1274" cy="306" r="4" fill="#F9F5E7"/>
+    <circle cx="1302" cy="356" r="3" fill="#C8A84B"/>
+    <circle cx="1314" cy="412" r="4" fill="#F9F5E7"/>
+    <circle cx="1302" cy="468" r="3" fill="#C8A84B"/>
+    <circle cx="1274" cy="520" r="4" fill="#F9F5E7"/>
+    <circle cx="1233" cy="564" r="3" fill="#C8A84B"/>
+    <circle cx="1184" cy="600" r="4" fill="#F9F5E7"/>
+    <circle cx="1126" cy="628" r="3" fill="#C8A84B"/>
+    <circle cx="1058" cy="648" r="4" fill="#F9F5E7"/>
+  </g>
+</svg>

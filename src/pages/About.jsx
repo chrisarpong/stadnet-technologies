@@ -1,46 +1,50 @@
-import Hero from '../components/Hero';
-import InteractiveServiceCards from '../components/InteractiveServiceCards';
+import { Link } from 'react-router-dom';
+import { FaHandshake, FaChartLine, FaGlobeAfrica, FaArrowRight } from 'react-icons/fa';
+import SEO from '../components/SEO';
 import Breadcrumb from '../components/Breadcrumb';
-import { FaLightbulb, FaHandshake, FaRocket, FaUsers, FaShieldAlt, FaLeaf } from 'react-icons/fa';
+import { imageAssets } from '../lib/siteAssets';
 import './About.css';
 
 const About = () => {
-    const coreValues = [
+    const values = [
         {
-            title: 'Innovation',
-            description: 'We constantly push boundaries and explore new technologies to deliver cutting-edge solutions.',
-            icon: <FaLightbulb />,
-            link: null // No link for values, just display
+            title: 'Partnership',
+            description: 'We work closely with clients as delivery partners, not just external vendors, so the work stays aligned with real business priorities.',
+            icon: <FaHandshake />
         },
         {
-            title: 'Excellence',
-            description: 'We are committed to the highest quality in every line of code, design pixel, and client interaction.',
-            icon: <FaRocket />,
-            link: null
+            title: 'Outcomes-Focused',
+            description: 'We care about measurable progress, stronger execution, and practical systems that help teams move with more clarity and confidence.',
+            icon: <FaChartLine />
         },
         {
-            title: 'Integrity',
-            description: 'We build trust through transparency, honesty, and accountability in all our partnerships.',
-            icon: <FaShieldAlt />,
-            link: null
+            title: 'Long-Term Impact',
+            description: 'We design digital solutions that can scale, adapt, and continue creating value as organisations grow and evolve.',
+            icon: <FaGlobeAfrica />
+        }
+    ];
+
+    const leaders = [
+        {
+            name: 'Ama Boateng',
+            role: 'Head of Delivery',
+            image: imageAssets.leaderAma,
+            summary: '12+ years leading transformation programs across Africa and Europe.',
+            detail: 'Ama brings operational structure, stakeholder coordination, and delivery rhythm to complex digital initiatives that need momentum and trust.'
         },
         {
-            title: 'Collaboration',
-            description: 'We believe in the power of teamwork, working closely with our clients to achieve shared goals.',
-            icon: <FaHandshake />,
-            link: null
+            name: 'Kwesi Mensah',
+            role: 'Lead Solutions Architect',
+            image: imageAssets.leaderKwesi,
+            summary: '10+ years building cloud platforms, integrations, and internal systems.',
+            detail: 'Kwesi shapes resilient technical foundations that connect architecture decisions with practical delivery, modernization, and long-term maintainability.'
         },
         {
-            title: 'User-Centricity',
-            description: 'We put the user at the heart of everything we do, ensuring intuitive and impactful experiences.',
-            icon: <FaUsers />,
-            link: null
-        },
-        {
-            title: 'Sustainability',
-            description: 'We design digital solutions that are sustainable, scalable, and future-proof.',
-            icon: <FaLeaf />,
-            link: null
+            name: 'Naa Adjeley',
+            role: 'Senior Product Strategist',
+            image: imageAssets.leaderNaa,
+            summary: 'Specialist in service design, product delivery, and digital operating models.',
+            detail: 'Naa helps turn ambiguity into direction, bringing sharper product thinking and business clarity to systems, workflows, and user experiences.'
         }
     ];
 
@@ -50,60 +54,171 @@ const About = () => {
     ];
 
     return (
-        <div className="about-page">
-            <Breadcrumb items={breadcrumbItems} />
-
-            <Hero
+        <div className="about-page about-kynova">
+            <SEO
                 title="About KYNOVA"
-                subtitle="Building the future of digital technology, one solution at a time."
-                height="medium"
+                description="Learn about KYNOVA's delivery approach, leadership team, values, and the practical digital transformation support we provide."
+                keywords="KYNOVA about, digital transformation, product engineering, cloud modernization, delivery team"
             />
 
-            <section className="section">
+            <Breadcrumb items={breadcrumbItems} />
+
+            <section className="about-hero">
                 <div className="container">
-                    {/* Our Story */}
-                    <div className="about-intro glass-light p-xl rounded-lg mb-xl animate-fadeInUp">
-                        <h2 className="text-gradient mb-md">Our Story</h2>
-                        <div className="story-content">
-                            <p className="mb-md">
-                                Founded in Accra, Ghana, KYNOVA emerged from a simple yet powerful belief:
-                                that technology should be an enabler, not a barrier. What started as a small team of
-                                passionate developers has grown into a premier digital transformation agency.
+                    <div className="about-hero-grid">
+                        <div className="about-hero-copy">
+                            <span className="about-kicker">About us</span>
+                            <h1>Creating clarity, momentum, and stronger digital execution.</h1>
+                            <p className="about-hero-text">
+                                KYNOVA helps organisations modernise the way they build, operate, and deliver.
+                                We bring product, platform, cloud, and workflow expertise together so teams can
+                                move from ambition to measurable execution with less friction.
                             </p>
-                            <p>
-                                We specialize in bridging the gap between complex technical challenges and elegant,
-                                user-friendly solutions. Our journey has been defined by a relentless pursuit of
-                                innovation and a deep commitment to our clients' success. Today, we partner with
-                                businesses across the globe to build digital products that matter.
+                            <p className="about-hero-text">
+                                Our work is shaped by a simple belief: meaningful digital change happens when
+                                strategy, systems, and delivery discipline are designed to support each other.
                             </p>
+                        </div>
+
+                        <div className="about-hero-media">
+                            <div className="about-hero-card">
+                                <img
+                                    src={imageAssets.homeHero.src}
+                                    srcSet={imageAssets.homeHero.srcSet}
+                                    sizes={imageAssets.homeHero.sizes}
+                                    width={imageAssets.homeHero.width}
+                                    height={imageAssets.homeHero.height}
+                                    alt="KYNOVA leadership and delivery collaboration"
+                                    loading="eager"
+                                    decoding="async"
+                                />
+                            </div>
+                            <div className="about-floating-note">
+                                <span>Execution-first</span>
+                                <strong>Structured teams for product, cloud, workflow, and insight delivery.</strong>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    {/* Mission & Vision */}
-                    <div className="mission-vision-grid mb-xl">
-                        <div className="mv-card glass-card animate-fadeInUp" style={{ animationDelay: '200ms' }}>
-                            <h3 className="text-gradient">Our Mission</h3>
+            <section className="section about-story-section">
+                <div className="container">
+                    <div className="about-story-grid">
+                        <div className="about-story-card">
+                            <span className="about-kicker">Our story</span>
+                            <h2>Building practical digital capacity for organisations that need to move.</h2>
                             <p>
-                                To empower businesses with innovative digital solutions that drive growth, efficiency,
-                                and meaningful user connections.
+                                KYNOVA was built around a recurring challenge we saw across growing organisations:
+                                the right digital priorities were often clear, but execution capacity was fragmented,
+                                overstretched, or hard to assemble quickly.
+                            </p>
+                            <p>
+                                We created KYNOVA to close that gap with a more integrated delivery model. One that
+                                combines technical expertise, structured collaboration, and business-minded execution
+                                so digital work becomes easier to shape, launch, and sustain.
                             </p>
                         </div>
-                        <div className="mv-card glass-card animate-fadeInUp" style={{ animationDelay: '400ms' }}>
-                            <h3 className="text-gradient">Our Vision</h3>
-                            <p>
-                                To be the leading catalyst for digital transformation in Africa and beyond, known for
-                                our technical excellence and human-centric approach.
-                            </p>
+
+                        <div className="about-mission-stack">
+                            <article className="about-mini-panel">
+                                <span className="about-kicker">Our mission</span>
+                                <h3>Help organisations deliver better digital systems with greater confidence.</h3>
+                                <p>We bring focused teams, practical architecture, and visible execution to the work that matters most.</p>
+                            </article>
+                            <article className="about-mini-panel">
+                                <span className="about-kicker">Our vision</span>
+                                <h3>Be a trusted delivery partner for modern organisations across Africa and beyond.</h3>
+                                <p>We want digital transformation to feel more grounded, more measurable, and more achievable for ambitious teams.</p>
+                            </article>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    {/* Core Values */}
-                    <div className="core-values-section">
-                        <h2 className="section-title text-center mb-md">Our Core Values</h2>
-                        <p className="section-subtitle text-center mb-lg">
-                            The principles that guide our work and culture
+            <section className="section about-values-section">
+                <div className="container">
+                    <div className="section-header text-center">
+                        <span className="about-kicker">Our core values</span>
+                        <h2 className="section-title">The way we work matters as much as the work itself.</h2>
+                    </div>
+
+                    <div className="about-values-grid">
+                        {values.map((value) => (
+                            <article className="about-value-card" key={value.title}>
+                                <div className="about-value-icon">{value.icon}</div>
+                                <h3>{value.title}</h3>
+                                <p>{value.description}</p>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="section about-team-section">
+                <div className="container">
+                    <div className="section-header text-center">
+                        <span className="about-kicker">Leadership</span>
+                        <h2 className="section-title">A team shaped by strategy, systems, and delivery experience.</h2>
+                        <p className="section-subtitle">
+                            Our leadership approach combines operational discipline, technical depth, and product thinking to keep execution grounded in real outcomes.
                         </p>
-                        <InteractiveServiceCards services={coreValues} />
+                    </div>
+
+                    <div className="about-team-grid">
+                        {leaders.map((leader) => (
+                            <article className="about-team-card" key={leader.name}>
+                                <img
+                                    className="about-team-image"
+                                    src={leader.image.src}
+                                    srcSet={leader.image.srcSet}
+                                    sizes={leader.image.sizes}
+                                    width={leader.image.width}
+                                    height={leader.image.height}
+                                    alt={leader.name}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                                <div className="about-team-copy">
+                                    <h3>{leader.name}</h3>
+                                    <p className="about-team-role">{leader.role}</p>
+                                    <p className="about-team-summary">{leader.summary}</p>
+                                    <p>{leader.detail}</p>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="section about-name-section">
+                <div className="container">
+                    <div className="about-name-grid">
+                        <div className="about-name-panel">
+                            <span className="about-kicker">What KYNOVA stands for</span>
+                            <h2>Progress that feels intelligent, intentional, and built to last.</h2>
+                            <p>
+                                The KYNOVA brand reflects the kind of work we believe in: modern systems,
+                                sharper visibility, better coordination, and delivery approaches that create
+                                lasting momentum instead of short-lived fixes.
+                            </p>
+                            <p>
+                                Our role is not simply to ship features. It is to help organisations create
+                                stronger digital foundations, clearer operating rhythms, and more confident
+                                decision-making across teams.
+                            </p>
+                        </div>
+
+                        <div className="about-name-aside">
+                            <div className="about-name-badge">KYNOVA</div>
+                            <p>
+                                A name built to evoke motion, capability, and renewal. It reflects our focus on
+                                helping ambitious organisations modernise with purpose and execute with clarity.
+                            </p>
+                            <Link className="about-inline-link" to="/contact">
+                                Start a conversation <FaArrowRight />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './ParallaxHero.css';
 
-const ParallaxHero = ({ title, subtitle, ctaText, ctaLink }) => {
+const ParallaxHero = ({ title, subtitle, ctaText, ctaLink, secondaryCtaText, secondaryCtaLink, note }) => {
     const heroRef = useRef(null);
     const shapesRef = useRef([]);
 
@@ -59,13 +60,40 @@ const ParallaxHero = ({ title, subtitle, ctaText, ctaLink }) => {
                         <p className="hero-subtitle animate-fade-in animate-delay-200">
                             {subtitle}
                         </p>
-                        {ctaText && ctaLink && (
-                            <a href={ctaLink} className="hero-cta animate-fade-in animate-delay-400">
-                                {ctaText}
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </a>
+                        {(ctaText && ctaLink) && (
+                            <div className="hero-cta-group animate-fade-in animate-delay-400">
+                                {ctaLink.startsWith('/') ? (
+                                    <Link to={ctaLink} className="hero-cta">
+                                        {ctaText}
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </Link>
+                                ) : (
+                                    <a href={ctaLink} className="hero-cta">
+                                        {ctaText}
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </a>
+                                )}
+
+                                {(secondaryCtaText && secondaryCtaLink) && (
+                                    secondaryCtaLink.startsWith('/') ? (
+                                        <Link to={secondaryCtaLink} className="hero-cta hero-cta-secondary">
+                                            {secondaryCtaText}
+                                        </Link>
+                                    ) : (
+                                        <a href={secondaryCtaLink} className="hero-cta hero-cta-secondary">
+                                            {secondaryCtaText}
+                                        </a>
+                                    )
+                                )}
+                            </div>
+                        )}
+
+                        {note && (
+                            <p className="hero-note animate-fade-in animate-delay-600">{note}</p>
                         )}
                     </div>
 

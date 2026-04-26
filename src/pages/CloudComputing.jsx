@@ -1,11 +1,28 @@
+import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';
+import SEO from '../components/SEO';
 import { FaCloudUploadAlt, FaNetworkWired, FaServer, FaShieldAlt, FaInfinity, FaMoneyBillWave } from 'react-icons/fa';
 import './ServicePage.css';
 import Breadcrumb from '../components/Breadcrumb';
 
 
 const CloudComputing = () => {
+    const highlights = [
+        {
+            title: 'Best suited for',
+            description: 'Organisations modernising infrastructure, improving uptime, or preparing digital systems to support growth with less operational fragility.'
+        },
+        {
+            title: 'Typical outcomes',
+            description: 'More reliable releases, better visibility into system performance, cleaner infrastructure decisions, and more scalable cloud operations.'
+        },
+        {
+            title: 'How we approach it',
+            description: 'We look at environments, risks, dependencies, and business needs together so cloud work improves delivery instead of adding complexity.'
+        }
+    ];
+
     const features = [
         {
             title: 'Cloud Migration',
@@ -41,12 +58,17 @@ const CloudComputing = () => {
 
     const breadcrumbItems = [
         { label: 'Home', path: '/' },
-        { label: 'Solutions', path: '/solutions' },
         { label: 'Cloud Computing', path: '/cloud-computing' }
     ];
 
     return (
         <div className="service-page">
+            <SEO
+                title="Cloud Computing Solutions | KYNOVA"
+                description="Cloud migration, infrastructure modernization, DevOps, and cloud optimization services for organisations building more resilient digital operations."
+                keywords="cloud computing, cloud migration, DevOps, infrastructure modernization, KYNOVA"
+            />
+
             <Breadcrumb items={breadcrumbItems} />
 
             <Hero
@@ -68,8 +90,26 @@ const CloudComputing = () => {
                         </p>
                     </div>
 
+                    <div className="service-highlight-grid mb-xl">
+                        {highlights.map((item) => (
+                            <article className="service-highlight-card" key={item.title}>
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                            </article>
+                        ))}
+                    </div>
+
                     <h3 className="section-title text-center mb-lg">Cloud Services</h3>
                     <InteractiveServiceCards services={features} />
+
+                    <div className="service-bottom-cta">
+                        <div>
+                            <span className="service-kicker">Planning cloud work?</span>
+                            <h3>Let&apos;s shape a stronger foundation for your systems and teams.</h3>
+                            <p>We can help you clarify the right cloud priorities, modernization path, and operating model for your environment.</p>
+                        </div>
+                        <Link className="service-inline-link" to="/contact">Talk to KYNOVA</Link>
+                    </div>
                 </div>
             </section>
         </div>

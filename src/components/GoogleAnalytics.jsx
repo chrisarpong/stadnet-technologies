@@ -5,13 +5,17 @@
 
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { COOKIE_CONSENT_EVENT, hasAcceptedAnalyticsConsent } from '../lib/consent';
 
 const GoogleAnalytics = ({ measurementId }) => {
     const location = useLocation();
 
     useEffect(() => {
-        // Load Google Analytics script
-        if (!window.gtag && measurementId) {
+        const loadAnalytics = () => {
+            if (!measurementId || !hasAcceptedAnalyticsConsent() || window.gtag) {
+                return;
+            }
+
             const script = document.createElement('script');
             script.async = true;
             script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
@@ -23,12 +27,16 @@ const GoogleAnalytics = ({ measurementId }) => {
             };
             window.gtag('js', new Date());
             window.gtag('config', measurementId);
-        }
+        };
+
+        loadAnalytics();
+        window.addEventListener(COOKIE_CONSENT_EVENT, loadAnalytics);
+
+        return () => window.removeEventListener(COOKIE_CONSENT_EVENT, loadAnalytics);
     }, [measurementId]);
 
-    // Track page views on route change
     useEffect(() => {
-        if (window.gtag && measurementId) {
+        if (window.gtag && measurementId && hasAcceptedAnalyticsConsent()) {
             window.gtag('config', measurementId, {
                 page_path: location.pathname + location.search,
             });
