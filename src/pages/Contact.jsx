@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import SEO from '../components/SEO';
 import Hero from '../components/Hero';
@@ -37,6 +38,8 @@ const Contact = () => {
             const serviceId = 'service_fv1sml6';
             const templateId = 'template_akvlspq';
             const publicKey = 'BYTukTFrH6diIXbZt';
+
+            const { default: emailjs } = await import('@emailjs/browser');
 
             await emailjs.sendForm(
                 serviceId,
