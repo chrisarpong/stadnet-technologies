@@ -1,0 +1,112 @@
+.legal-page {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(200, 168, 75, 0.16), transparent 28%),
+        linear-gradient(180deg, #31297d 0%, #241d63 26%, #1b154c 100%);
+    color: #f9f5e7;
+}
+
+.legal-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(19, 14, 51, 0.42) 0%, rgba(19, 14, 51, 0.62) 100%),
+        url('/home-hero-photo.jpg');
+    background-size: cover, cover;
+    background-position: center top, center top;
+    background-repeat: no-repeat, no-repeat;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.legal-page > * {
+    position: relative;
+    z-index: 1;
+}
+
+.legal-page .breadcrumb {
+    background: linear-gradient(180deg, rgba(25, 19, 67, 0.26), rgba(25, 19, 67, 0.08));
+    border-bottom: 1px solid rgba(200, 168, 75, 0.08);
+}
+
+.legal-hero {
+    padding: 2rem 0 2.5rem;
+}
+
+.legal-shell {
+    max-width: 920px;
+    margin: 0 auto 4rem;
+    padding: 2rem;
+    border: 1px solid rgba(249, 245, 231, 0.1);
+    border-radius: 30px;
+    background: rgba(249, 245, 231, 0.05);
+    box-shadow: 0 24px 60px rgba(8, 6, 26, 0.28);
+}
+
+.legal-kicker {
+    display: inline-block;
+    margin-bottom: 0.95rem;
+    color: #c8a84b;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.legal-title {
+    margin-bottom: 1rem;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    line-height: 1.02;
+}
+
+.legal-intro {
+    max-width: 64ch;
+    color: rgba(249, 245, 231, 0.84);
+    line-height: 1.8;
+}
+
+.legal-content {
+    display: grid;
+    gap: 1.6rem;
+    margin-top: 2rem;
+}
+
+.legal-section h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.45rem;
+}
+
+.legal-section p,
+.legal-section li {
+    color: rgba(249, 245, 231, 0.8);
+    line-height: 1.8;
+}
+
+.legal-section ul {
+    margin: 0.85rem 0 0;
+    padding-left: 1.2rem;
+}
+
+.legal-section a {
+    color: #f2dd99;
+    font-weight: 700;
+}
+
+.legal-section a:hover {
+    color: #f9f5e7;
+}
+
+@media (max-width: 768px) {
+    .legal-hero {
+        padding: 1.5rem 0 2rem;
+    }
+
+    .legal-shell {
+        padding: 1.4rem;
+        margin-bottom: 3rem;
+    }
+}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaMobileAlt, FaCloud, FaPencilRuler, FaLayerGroup, FaHandshake, FaCogs } from 'react-icons/fa';
+import { FaMobileAlt, FaCloud, FaPencilRuler, FaHandshake, FaCogs } from 'react-icons/fa';
+import { imageAssets } from '../lib/siteAssets';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -10,10 +11,24 @@ const Navbar = () => {
     const location = useLocation();
 
     useEffect(() => {
+        let ticking = false;
+
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
+            if (ticking) {
+                return;
+            }
+
+            ticking = true;
+
+            window.requestAnimationFrame(() => {
+                setIsScrolled(window.scrollY > 20);
+                ticking = false;
+            });
         };
-        window.addEventListener('scroll', handleScroll);
+
+        handleScroll();
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -56,12 +71,23 @@ const Navbar = () => {
         { name: 'Engineering & Digitization', path: '/engineering', icon: <FaCogs /> },
     ];
 
+    const isSolutionsActive = services.some((service) => location.pathname === service.path);
+
+    const isAboutPage = location.pathname === '/about';
+
     return (
-        <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
+        <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${isAboutPage ? 'navbar-about' : ''}`}>
             <div className="container">
                 <div className="navbar-content">
                     <Link to="/" className="navbar-logo">
-                        <img src="/logo.png" alt="KYNOVA" className="logo-image" />
+                        <img
+                            src={imageAssets.logo.src}
+                            alt="KYNOVA"
+                            className="logo-image"
+                            width={imageAssets.logo.width}
+                            height={imageAssets.logo.height}
+                            fetchPriority="high"
+                        />
                         <span className="logo-text-brand">KYNOVA</span>
                     </Link>
 
@@ -84,15 +110,15 @@ const Navbar = () => {
                     )}
 
                     <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-                        <Link to="/" className="nav-link">Home</Link>
-                        <Link to="/about" className="nav-link">About</Link>
+                        <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
+                        <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About</Link>
                         <div
                             className="nav-dropdown"
                             onMouseEnter={() => !isMobileMenuOpen && setActiveDropdown('solutions')}
                             onMouseLeave={() => !isMobileMenuOpen && setActiveDropdown(null)}
                         >
                             <button
-                                className="nav-link dropdown-toggle"
+                                className={`nav-link dropdown-toggle ${isSolutionsActive ? 'active' : ''}`}
                                 onClick={() => isMobileMenuOpen && toggleDropdown('solutions')}
                                 aria-expanded={activeDropdown === 'solutions'}
                             >
@@ -111,8 +137,8 @@ const Navbar = () => {
                                 ))}
                             </div>
                         </div>
-                        <Link to="/careers" className="nav-link">Careers</Link>
-                        <Link to="/contact" className="nav-link">Contact</Link>
+                        <Link to="/careers" className={`nav-link ${location.pathname === '/careers' ? 'active' : ''}`}>Careers</Link>
+                        <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
                     </div>
                 </div>
             </div>

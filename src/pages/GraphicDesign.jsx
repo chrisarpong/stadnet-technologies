@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Breadcrumb from '../components/Breadcrumb';
 import SEO from '../components/SEO';
@@ -6,6 +7,21 @@ import { FaPencilRuler, FaPalette, FaPrint, FaInstagram, FaBullhorn, FaFilm } fr
 import './ServicePage.css';
 
 const GraphicDesign = () => {
+    const highlights = [
+        {
+            title: 'Best suited for',
+            description: 'Brands, teams, and products that need clearer visual communication across digital interfaces, campaigns, and customer-facing materials.'
+        },
+        {
+            title: 'Typical outcomes',
+            description: 'Stronger brand consistency, cleaner product experiences, more persuasive communication assets, and visuals that support business goals.'
+        },
+        {
+            title: 'How we approach it',
+            description: 'We connect design decisions to real audience needs, business positioning, and usability so visuals are not just attractive, but useful.'
+        }
+    ];
+
     const features = [
         {
             title: 'Brand Identity Design',
@@ -41,7 +57,6 @@ const GraphicDesign = () => {
 
     const breadcrumbItems = [
         { label: 'Home', path: '/' },
-        { label: 'Solutions', path: '/solutions' },
         { label: 'Graphic Design', path: '/graphic-design' }
     ];
 
@@ -75,8 +90,26 @@ const GraphicDesign = () => {
                         </p>
                     </div>
 
+                    <div className="service-highlight-grid mb-xl">
+                        {highlights.map((item) => (
+                            <article className="service-highlight-card" key={item.title}>
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                            </article>
+                        ))}
+                    </div>
+
                     <h3 className="section-title text-center mb-lg">Design Services</h3>
                     <InteractiveServiceCards services={features} />
+
+                    <div className="service-bottom-cta">
+                        <div>
+                            <span className="service-kicker">Need sharper visuals?</span>
+                            <h3>Let&apos;s build a stronger design direction for your brand or product.</h3>
+                            <p>We can help define the visual system, user experience priorities, and assets needed to support clearer communication.</p>
+                        </div>
+                        <Link className="service-inline-link" to="/contact">Talk to KYNOVA</Link>
+                    </div>
                 </div>
             </section>
         </div>

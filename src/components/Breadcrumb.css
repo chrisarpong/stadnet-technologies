@@ -1,5 +1,6 @@
 .breadcrumb {
     padding: var(--spacing-sm) var(--spacing-md);
+    margin-top: var(--navbar-height);
     margin-bottom: 0;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(8px);
@@ -84,7 +85,6 @@
 @media (max-width: 768px) {
     .breadcrumb {
         padding: var(--spacing-xs) var(--spacing-sm);
-        margin-top: 60px;
     }
 
     .breadcrumb-item a,
